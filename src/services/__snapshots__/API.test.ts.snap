@@ -1,0 +1,771 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`API should always have the same amount of basic authenticated endpoints 1`] = `[]`;
+
+exports[`API should always have the same amount of bearer authenticated endpoints 1`] = `
+[
+  "get /diagnostic",
+  "get /openAPI",
+  "post /crons/{cronName}/run",
+]
+`;
+
+exports[`API should always have the same amount of endpoints 1`] = `
+[
+  "get /delay",
+  "get /diagnostic",
+  "get /openAPI",
+  "get /ping",
+  "get /time",
+  "get /{pathParam1}/{pathParam2}",
+  "options /crons/{cronName}/run",
+  "options /delay",
+  "options /diagnostic",
+  "options /echo",
+  "options /openAPI",
+  "options /ping",
+  "options /stream",
+  "options /time",
+  "options /{pathParam1}/{pathParam2}",
+  "post /crons/{cronName}/run",
+  "put /echo",
+  "put /stream",
+]
+`;
+
+exports[`API should always have the same amount of non authenticated endpoints 1`] = `
+[
+  "get /delay",
+  "get /ping",
+  "get /time",
+  "get /{pathParam1}/{pathParam2}",
+  "options /crons/{cronName}/run",
+  "options /delay",
+  "options /diagnostic",
+  "options /echo",
+  "options /openAPI",
+  "options /ping",
+  "options /stream",
+  "options /time",
+  "options /{pathParam1}/{pathParam2}",
+  "put /echo",
+  "put /stream",
+]
+`;
+
+exports[`API should always have the same amount of optionally authenticated endpoints 1`] = `
+[
+  "get /openAPI",
+]
+`;
+
+exports[`API should always have the same amount of publicly documented endpoints 1`] = `
+[
+  "get /delay",
+  "get /diagnostic",
+  "get /openAPI",
+  "get /ping",
+  "get /time",
+  "get /{pathParam1}/{pathParam2}",
+  "options /crons/{cronName}/run",
+  "options /delay",
+  "options /diagnostic",
+  "options /echo",
+  "options /openAPI",
+  "options /ping",
+  "options /stream",
+  "options /time",
+  "options /{pathParam1}/{pathParam2}",
+  "post /crons/{cronName}/run",
+  "put /echo",
+  "put /stream",
+]
+`;
+
+exports[`API should work 1`] = `
+{
+  "API": {
+    "components": {
+      "callbacks": {
+        "DelayCallback": {
+          "{$request.query.callbackUrl}": {
+            "post": {
+              "operationId": "postDelayCallback",
+              "parameters": [
+                {
+                  "$ref": "#/components/parameters/duration",
+                },
+              ],
+              "responses": {
+                "204": {
+                  "description": "Delay trigger received.",
+                },
+              },
+            },
+          },
+        },
+      },
+      "headers": {},
+      "parameters": {
+        "date": {
+          "in": "query",
+          "name": "date",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Date",
+          },
+        },
+        "duration": {
+          "description": "Duration in milliseconds",
+          "in": "query",
+          "name": "duration",
+          "required": true,
+          "schema": {
+            "type": "number",
+          },
+        },
+        "pathParam1": {
+          "description": "A number param",
+          "in": "path",
+          "name": "pathParam1",
+          "required": true,
+          "schema": {
+            "type": "number",
+          },
+        },
+        "pathParam2": {
+          "description": "A string item",
+          "in": "path",
+          "name": "pathParam2",
+          "required": true,
+          "schema": {
+            "type": "string",
+          },
+        },
+        "queryParam": {
+          "description": "A list of items",
+          "in": "query",
+          "name": "queryParam",
+          "required": true,
+          "schema": {
+            "items": {
+              "type": "string",
+            },
+            "type": "array",
+          },
+        },
+      },
+      "requestBodies": {
+        "Echo": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Echo",
+              },
+            },
+          },
+          "required": true,
+        },
+        "Stream": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "$ref": "#/components/schemas/Stream",
+              },
+            },
+          },
+          "required": true,
+        },
+      },
+      "responses": {
+        "Diagnostic": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "transactions": {
+                    "additionalProperties": true,
+                    "type": "object",
+                  },
+                },
+                "required": [
+                  "transactions",
+                ],
+                "type": "object",
+              },
+            },
+          },
+          "description": "Diagnostic",
+        },
+        "Echo": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Echo",
+              },
+            },
+          },
+          "description": "Echo response",
+        },
+        "Stream": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "$ref": "#/components/schemas/Stream",
+              },
+            },
+          },
+        },
+      },
+      "schemas": {
+        "Date": {
+          "format": "date-time",
+          "type": "string",
+        },
+        "Echo": {
+          "additionalProperties": false,
+          "properties": {
+            "echo": {
+              "type": "string",
+            },
+          },
+          "required": [
+            "echo",
+          ],
+          "type": "object",
+        },
+        "Stream": {
+          "format": "binary",
+          "type": "string",
+        },
+        "TimeSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "currentDate": {
+              "format": "date-time",
+              "type": "string",
+            },
+          },
+          "type": "object",
+        },
+      },
+      "securitySchemes": {
+        "bearerAuth": {
+          "description": "Bearer authentication with a user API token",
+          "scheme": "bearer",
+          "type": "http",
+        },
+      },
+    },
+    "info": {
+      "description": "A basic Whook server",
+      "title": "@whook/example",
+      "version": "1.1.0",
+    },
+    "openapi": "3.1.0",
+    "paths": {
+      "/crons/{cronName}/run": {
+        "options": {
+          "operationId": "postCronRunCORS",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "cronName",
+              "required": true,
+              "schema": {
+                "type": "string",
+              },
+            },
+            {
+              "in": "query",
+              "name": "date",
+              "required": false,
+              "schema": {
+                "$ref": "#/components/schemas/Date",
+              },
+            },
+            {
+              "in": "query",
+              "name": "access_token",
+              "schema": {
+                "type": "string",
+              },
+            },
+          ],
+          "responses": {
+            "200": {
+              "description": "CORS sent.",
+            },
+          },
+          "summary": "Enable OPTIONS for CORS",
+          "tags": [
+            "CORS",
+          ],
+        },
+        "post": {
+          "description": "Allow to run crons on the fly for development or testing purposes.",
+          "operationId": "postCronRun",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "cronName",
+              "required": true,
+              "schema": {
+                "type": "string",
+              },
+            },
+            {
+              "$ref": "#/components/parameters/date",
+            },
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                },
+              },
+            },
+            "required": true,
+          },
+          "responses": {
+            "204": {
+              "description": "Cron run successfully!",
+            },
+          },
+          "security": [
+            {
+              "bearerAuth": [
+                "admin",
+              ],
+            },
+          ],
+          "tags": [
+            "system",
+          ],
+        },
+      },
+      "/delay": {
+        "get": {
+          "callbacks": {
+            "DelayCallback": {
+              "$ref": "#/components/callbacks/DelayCallback",
+            },
+          },
+          "operationId": "getDelay",
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/duration",
+            },
+            {
+              "in": "query",
+              "name": "callbackUrl",
+              "schema": {
+                "format": "uri",
+                "type": "string",
+              },
+            },
+          ],
+          "responses": {
+            "204": {
+              "description": "Delay expired",
+            },
+          },
+          "summary": "Answer after a given delay.",
+          "tags": [
+            "example",
+          ],
+        },
+        "options": {
+          "operationId": "getDelayCORS",
+          "parameters": [
+            {
+              "description": "Duration in milliseconds",
+              "in": "query",
+              "name": "duration",
+              "required": false,
+              "schema": {
+                "type": "number",
+              },
+            },
+            {
+              "in": "query",
+              "name": "callbackUrl",
+              "schema": {
+                "format": "uri",
+                "type": "string",
+              },
+            },
+          ],
+          "responses": {
+            "200": {
+              "description": "CORS sent.",
+            },
+          },
+          "summary": "Enable OPTIONS for CORS",
+          "tags": [
+            "CORS",
+          ],
+        },
+      },
+      "/diagnostic": {
+        "get": {
+          "operationId": "getDiagnostic",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/Diagnostic",
+            },
+          },
+          "security": [
+            {
+              "bearerAuth": [
+                "admin",
+              ],
+            },
+          ],
+          "summary": "Returns current API's transactions.",
+          "tags": [
+            "system",
+          ],
+        },
+        "options": {
+          "operationId": "getDiagnosticCORS",
+          "parameters": [
+            {
+              "in": "query",
+              "name": "access_token",
+              "schema": {
+                "type": "string",
+              },
+            },
+          ],
+          "responses": {
+            "200": {
+              "description": "CORS sent.",
+            },
+          },
+          "summary": "Enable OPTIONS for CORS",
+          "tags": [
+            "CORS",
+          ],
+        },
+      },
+      "/echo": {
+        "options": {
+          "operationId": "putEchoCORS",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "CORS sent.",
+            },
+          },
+          "summary": "Enable OPTIONS for CORS",
+          "tags": [
+            "CORS",
+          ],
+        },
+        "put": {
+          "operationId": "putEcho",
+          "requestBody": {
+            "$ref": "#/components/requestBodies/Echo",
+          },
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/Echo",
+            },
+          },
+          "summary": "Echoes what it takes.",
+          "tags": [
+            "example",
+          ],
+        },
+      },
+      "/openAPI": {
+        "get": {
+          "operationId": "getOpenAPI",
+          "responses": {
+            "200": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                  },
+                },
+              },
+              "description": "Provides the private Open API documentation",
+            },
+          },
+          "security": [
+            {},
+            {
+              "bearerAuth": [
+                "admin",
+              ],
+            },
+          ],
+          "summary": "Get the API documentation.",
+          "tags": [
+            "system",
+          ],
+        },
+        "options": {
+          "operationId": "getOpenAPICORS",
+          "parameters": [
+            {
+              "in": "query",
+              "name": "access_token",
+              "schema": {
+                "type": "string",
+              },
+            },
+          ],
+          "responses": {
+            "200": {
+              "description": "CORS sent.",
+            },
+          },
+          "summary": "Enable OPTIONS for CORS",
+          "tags": [
+            "CORS",
+          ],
+        },
+      },
+      "/ping": {
+        "get": {
+          "operationId": "getPing",
+          "responses": {
+            "200": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "pong": {
+                        "enum": [
+                          "pong",
+                        ],
+                        "type": "string",
+                      },
+                    },
+                    "type": "object",
+                  },
+                },
+              },
+              "description": "Pong",
+            },
+          },
+          "summary": "Checks API's availability.",
+          "tags": [
+            "system",
+          ],
+        },
+        "options": {
+          "operationId": "getPingCORS",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "CORS sent.",
+            },
+          },
+          "summary": "Enable OPTIONS for CORS",
+          "tags": [
+            "CORS",
+          ],
+        },
+      },
+      "/stream": {
+        "options": {
+          "operationId": "putEchoedStreamCORS",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "CORS sent.",
+            },
+          },
+          "summary": "Enable OPTIONS for CORS",
+          "tags": [
+            "CORS",
+          ],
+        },
+        "put": {
+          "operationId": "putEchoedStream",
+          "requestBody": {
+            "$ref": "#/components/requestBodies/Stream",
+          },
+          "responses": {
+            "201": {
+              "$ref": "#/components/responses/Stream",
+            },
+          },
+          "summary": "Echoes what it takes.",
+          "tags": [
+            "example",
+          ],
+        },
+      },
+      "/time": {
+        "get": {
+          "operationId": "getTime",
+          "responses": {
+            "200": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TimeSchema",
+                  },
+                },
+              },
+              "description": "Server current date",
+            },
+          },
+          "summary": "Get API internal clock date.",
+          "tags": [
+            "system",
+          ],
+        },
+        "options": {
+          "operationId": "getTimeCORS",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "CORS sent.",
+            },
+          },
+          "summary": "Enable OPTIONS for CORS",
+          "tags": [
+            "CORS",
+          ],
+        },
+      },
+      "/{pathParam1}/{pathParam2}": {
+        "get": {
+          "operationId": "getParameters",
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/pathParam1",
+            },
+            {
+              "$ref": "#/components/parameters/pathParam2",
+            },
+            {
+              "$ref": "#/components/parameters/queryParam",
+            },
+            {
+              "in": "header",
+              "name": "a-header",
+              "schema": {
+                "type": "boolean",
+              },
+            },
+            {
+              "in": "header",
+              "name": "aMultiHeader",
+              "schema": {
+                "items": {
+                  "type": "number",
+                },
+                "type": "array",
+              },
+            },
+          ],
+          "responses": {
+            "200": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "properties": {
+                      "aHeader": {
+                        "type": "boolean",
+                      },
+                      "aMultiHeader": {
+                        "prefixItems": [
+                          {
+                            "type": "number",
+                          },
+                          {
+                            "type": "number",
+                          },
+                        ],
+                        "type": "array",
+                      },
+                      "pathParam1": {
+                        "type": "number",
+                      },
+                      "pathParam2": {
+                        "type": "string",
+                      },
+                      "queryParam": {
+                        "items": {
+                          "type": "string",
+                        },
+                        "type": "array",
+                      },
+                    },
+                    "type": "object",
+                  },
+                },
+              },
+              "description": "Delay expired",
+            },
+          },
+          "summary": "An handler intended to test parameters.",
+          "tags": [
+            "example",
+          ],
+        },
+        "options": {
+          "operationId": "getParametersCORS",
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/pathParam1",
+            },
+            {
+              "$ref": "#/components/parameters/pathParam2",
+            },
+            {
+              "description": "A list of items",
+              "in": "query",
+              "name": "queryParam",
+              "required": false,
+              "schema": {
+                "items": {
+                  "type": "string",
+                },
+                "type": "array",
+              },
+            },
+          ],
+          "responses": {
+            "200": {
+              "description": "CORS sent.",
+            },
+          },
+          "summary": "Enable OPTIONS for CORS",
+          "tags": [
+            "CORS",
+          ],
+        },
+      },
+    },
+    "security": [],
+    "servers": [
+      {
+        "url": "http://localhost:1337",
+      },
+    ],
+    "tags": [
+      {
+        "name": "system",
+      },
+    ],
+  },
+  "logCalls": [
+    [
+      "debug",
+      "🦄 - Initializing the API service!",
+    ],
+  ],
+}
+`;

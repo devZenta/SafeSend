@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`MECHANISMS should also include fake on debugging 1`] = `
+{
+  "logCalls": [
+    [
+      "debug",
+      "🔧 - Initializing auth mechanisms",
+    ],
+    [
+      "warning",
+      "⚠️ - Using fake auth mechanism!",
+    ],
+  ],
+}
+`;
+
+exports[`MECHANISMS should only include bearer 1`] = `
+{
+  "logCalls": [
+    [
+      "debug",
+      "🔧 - Initializing auth mechanisms",
+    ],
+  ],
+}
+`;
