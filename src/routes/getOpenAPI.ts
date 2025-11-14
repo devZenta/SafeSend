@@ -3,6 +3,7 @@ import {
   getOpenAPIDefinition as baseGetOpenAPIDefinition,
 } from '@whook/whook';
 import { service, location, useInject } from 'knifecycle';
+import { OpenAPI } from 'ya-open-api-types';
 
 /* Architecture Note #4: Serving the Open API
 
@@ -35,12 +36,12 @@ export const definition = {
 export default location(
   useInject(
     baseInitGetOpenAPI,
-    service(initGetOpenAPI, definition.operation.operationId),
+    service(initGetOpenAPI, definition.operation.operationId) as any,
   ),
   import.meta.url,
 );
 
-async function initGetOpenAPI(services) {
+async function initGetOpenAPI(services: { API: OpenAPI }) {
   const baseGetOpenAPI = await baseInitGetOpenAPI(services);
 
   const handler = async ({

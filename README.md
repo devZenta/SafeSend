@@ -1,14 +1,37 @@
-# safesend
+# SafeSend
 
-This is a basic [Whook](https://github.com/nfroidure/whook) server demonstrating
-the various usages of the Whook framework to build REST APIs.
+SafeSend is a tiny project to make a proof of concept of a simple but amazing idea: annihilate spam, for ever.
+
+## Development
+
+You will need to have a local maildev server running. To do so, run:
+```sh
+docker run -p 1080:1080 -p 1025:1025 maildev/maildev
+```
+
+And then, run the server locally:
+```sh
+# For the first time create a JWT secret
+echo 'JWT_SECRET=yop' > .env.app.local
+# And install the dependencies 
+npm it
+
+# Then and later, just run the server
+npm run watch
+```
 
 ## Usage
 
 To run the server in production:
 
 ```sh
+# For the first time create a JWT secret
+echo 'JWT_SECRET=$(openssl rand -base64 10)' > .env.app.production
+# And install the dependencies 
 npm it
+
+# Then and later, just run build and run the server
+npm run build
 NODE_ENV=production APP_ENV=production npm start
 ```
 
