@@ -77,6 +77,7 @@ const CONFIG: Omit<AppConfig, 'HOST'> = {
   SMTP_OPTIONS: {
     port: 2025,
     host: 'localhost',
+    domain: 'enigma.com',
   },
 };
 

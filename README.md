@@ -13,6 +13,7 @@ And then, run the server locally:
 ```sh
 # For the first time create a JWT secret
 echo 'JWT_SECRET=yop' > .env.app.local
+echo 'SMTP_CONNECTION_URL = smtp://localhost:2025' >> .env.app.local
 # And install the dependencies 
 npm it
 

@@ -6,6 +6,7 @@ export type SmtpServerService = InstanceType<typeof SMTPServer>;
 export type SmtpServerOptions = {
   port: number;
   host: string;
+  domain: string;
 };
 export type SmtpServerConfig = {
   SMTP_OPTIONS: SmtpServerOptions;
@@ -22,13 +23,13 @@ async function initSmtpServer({
   const server = new SMTPServer({
     authOptional: true,
     onMailFrom(address, session, callback) {
-      log('warning', `💌 - Received mail from ${address}, $session`);
+      log('warning', `💌 - Received mail from ${address}, ${session}`);
 
-      // if (!address.address.endsWith('@example.com')) {
-      //   return cb(
-      //     Object.assign(new Error('Relay denied'), { responseCode: 553 }),
-      //   );
-      // }
+      if (!address.address.endsWith(`@${SMTP_OPTIONS.domain}`)) {
+        return callback(
+          Object.assign(new Error('Relay denied'), { responseCode: 553 }),
+        );
+      }
       callback();
     },
   });
