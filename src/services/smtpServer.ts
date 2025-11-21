@@ -1,6 +1,7 @@
 import { autoProvider, location, type Provider } from 'knifecycle';
 import { type LogService } from 'common-services';
 import { SMTPServer } from 'smtp-server';
+import EmlParser from 'eml-parser';
 import { SendMailService } from './sendMail.js';
 
 export type SmtpServerService = InstanceType<typeof SMTPServer>;
@@ -41,11 +42,6 @@ async function initSmtpServer({
         );
       }
 
-      await sendMail({
-        to: 'text@xp.com',
-        subject: 'a mail',
-        text: 'we received a mail',
-      });
       log(
         'warning',
         `💌 - Proxyed mail from ${address.address} (session: ${session.id}).`,
@@ -53,6 +49,51 @@ async function initSmtpServer({
 
       callback();
     },
+    async onData(stream, session, callback) {
+      try {
+        log(
+          'warning',
+          `📧 - Parsing email data (session: ${session.id}).`,
+        );
+
+        const result = await new EmlParser(stream).parseEml();
+
+        log(
+          'warning',
+          `📧 - Email parsed successfully (session: ${session.id}).`,
+        );
+
+        const fromAddress = result.from?.value?.[0]?.address || result.from?.text || 'unknown@example.com';
+        const toAddress = result.to?.value?.[0]?.address || result.to?.text || 'unknown@example.com';
+        const subject = result.subject || 'No subject';
+        const text = result.text || 'No content';
+
+        log(
+          'warning',
+          `📧 - Email details: from=${fromAddress}, to=${toAddress}, subject=${subject} (session: ${session.id}).`,
+        );
+
+        await sendMail({
+          from: fromAddress,
+          to: toAddress,
+          subject: subject,
+          text: text,
+        });
+
+        log(
+          'warning',
+          `💌 - Email forwarded to ${toAddress} (session: ${session.id}).`,
+        );
+
+        callback();
+      } catch (err) {
+        log(
+          'error',
+          `❌ - Error parsing email (session: ${session.id}): ${err}`,
+        );
+        callback(err as Error);
+      }
+    }
   });
 
   await new Promise<void>((resolve, reject) => {
