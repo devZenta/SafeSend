@@ -687,6 +687,9 @@ describe('runProcess', () => {
       "⏳ - Skipped "putEchoedStream.test.ts" per ignore patterns.",
     ],
     [
+      "⏳ - Skipped "putKnockValidation.test.ts" per ignore patterns.",
+    ],
+    [
       "⏳ - Skipped "route.d.ts" per ignore patterns.",
     ],
     [
@@ -723,6 +726,9 @@ describe('runProcess', () => {
       "✅ - Module path of "getDiagnostic" found at "file:///project/src/routes/getDiagnostic.ts".",
     ],
     [
+      "✅ - Module path of "getKnockValidation" found at "file:///project/src/routes/getKnockValidation.ts".",
+    ],
+    [
       "✅ - Module path of "getOpenAPI" found at "file:///project/src/routes/getOpenAPI.ts".",
     ],
     [
@@ -754,6 +760,9 @@ describe('runProcess', () => {
     ],
     [
       "✅ - Module path of "putEchoedStream" found at "file:///project/src/routes/putEchoedStream.ts".",
+    ],
+    [
+      "✅ - Module path of "putKnockValidation" found at "file:///project/src/routes/putKnockValidation.ts".",
     ],
     [
       "✅ - Module path of "putTime" found at "file:///project/src/routes/putTime.ts".",
@@ -1074,6 +1083,9 @@ describe('runProcess', () => {
       "🍀 - Trying to find "getDiagnostic" module path in "__project__".",
     ],
     [
+      "🍀 - Trying to find "getKnockValidation" module path in "__project__".",
+    ],
+    [
       "🍀 - Trying to find "getOpenAPI" module path in "__project__".",
     ],
     [
@@ -1117,6 +1129,9 @@ describe('runProcess', () => {
     ],
     [
       "🍀 - Trying to find "putEchoedStream" module path in "__project__".",
+    ],
+    [
+      "🍀 - Trying to find "putKnockValidation" module path in "__project__".",
     ],
     [
       "🍀 - Trying to find "putTime" module path in "__project__".",
@@ -1185,6 +1200,9 @@ describe('runProcess', () => {
       "💿 - Loading "getDiagnostic" initializer from "file:///project/src/routes/getDiagnostic.ts".",
     ],
     [
+      "💿 - Loading "getKnockValidation" initializer from "file:///project/src/routes/getKnockValidation.ts".",
+    ],
+    [
       "💿 - Loading "getOpenAPI" initializer from "file:///project/src/routes/getOpenAPI.ts".",
     ],
     [
@@ -1218,6 +1236,9 @@ describe('runProcess', () => {
       "💿 - Loading "putEchoedStream" initializer from "file:///project/src/routes/putEchoedStream.ts".",
     ],
     [
+      "💿 - Loading "putKnockValidation" initializer from "file:///project/src/routes/putKnockValidation.ts".",
+    ],
+    [
       "💿 - Loading "putTime" initializer from "file:///project/src/routes/putTime.ts".",
     ],
     [
@@ -1246,6 +1267,9 @@ describe('runProcess', () => {
     ],
     [
       "💿 - Service "getDiagnostic" found in "file:///project/src/routes/getDiagnostic.ts".",
+    ],
+    [
+      "💿 - Service "getKnockValidation" found in "file:///project/src/routes/getKnockValidation.ts".",
     ],
     [
       "💿 - Service "getOpenAPI" found in "file:///project/src/routes/getOpenAPI.ts".",
@@ -1279,6 +1303,9 @@ describe('runProcess', () => {
     ],
     [
       "💿 - Service "putEchoedStream" found in "file:///project/src/routes/putEchoedStream.ts".",
+    ],
+    [
+      "💿 - Service "putKnockValidation" found in "file:///project/src/routes/putKnockValidation.ts".",
     ],
     [
       "💿 - Service "putTime" found in "file:///project/src/routes/putTime.ts".",
@@ -1779,6 +1806,12 @@ describe('runProcess', () => {
       "🛂 - Dynamic import of "file:///project/src/routes/getDiagnostic.ts".",
     ],
     [
+      "🛂 - Dynamic import of "file:///project/src/routes/getKnockValidation.ts".",
+    ],
+    [
+      "🛂 - Dynamic import of "file:///project/src/routes/getKnockValidation.ts".",
+    ],
+    [
       "🛂 - Dynamic import of "file:///project/src/routes/getOpenAPI.ts".",
     ],
     [
@@ -1813,6 +1846,12 @@ describe('runProcess', () => {
     ],
     [
       "🛂 - Dynamic import of "file:///project/src/routes/putEchoedStream.ts".",
+    ],
+    [
+      "🛂 - Dynamic import of "file:///project/src/routes/putKnockValidation.ts".",
+    ],
+    [
+      "🛂 - Dynamic import of "file:///project/src/routes/putKnockValidation.ts".",
     ],
     [
       "🛂 - Dynamic import of "file:///project/src/routes/putTime.ts".",
@@ -1880,7 +1919,7 @@ describe('runProcess', () => {
       "🏭 - Initializing the CRONS_WRAPPERS service.",
     ],
     [
-      "🏭 - Initializing the ROUTES_HANDLERS service with 11 handlers wrapped by 2 wrappers.",
+      "🏭 - Initializing the ROUTES_HANDLERS service with 13 handlers wrapped by 2 wrappers.",
     ],
     [
       "🏭 - Initializing the ROUTES_WRAPPERS service.",
