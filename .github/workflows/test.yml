@@ -24,4 +24,4 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run pre-commit tests
-        run: npm run precz
+        run: npm t
