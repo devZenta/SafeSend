@@ -60,7 +60,7 @@ export async function runProcess<
     injectedNames: DependencyDeclaration[],
     $: T,
   ) => Promise<D> = prepareProcess,
-  injectedNames: DependencyDeclaration[] = [],
+  injectedNames: DependencyDeclaration[] = ['smtpServer'],
   argv: typeof _argv = _argv,
 ): Promise<D> {
   return runBaseProcess(

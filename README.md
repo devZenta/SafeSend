@@ -13,12 +13,17 @@ And then, run the server locally:
 ```sh
 # For the first time create a JWT secret
 echo 'JWT_SECRET=yop' > .env.app.local
-echo 'SMTP_CONNECTION_URL = smtp://localhost:2025' >> .env.app.local
+echo 'SMTP_CONNECTION_URL = smtp://localhost:1025' >> .env.app.local
 # And install the dependencies 
 npm it
 
 # Then and later, just run the server
 npm run watch
+```
+
+Testing email server:
+```sh
+SMTP_CONNECTION_URL=smtp://localhost:2025 node --run dev -- sendMail --recipient text@xx.com --sender test@enigma.com --subject test --message test
 ```
 
 ## Usage

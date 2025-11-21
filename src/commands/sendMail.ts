@@ -13,6 +13,13 @@ export const definition = {
   example: `whook sendMail --keysOnly`,
   arguments: [
     {
+      name: 'sender',
+      description: 'The mail sender',
+      schema: {
+        type: 'string',
+      },
+    },
+    {
       name: 'recipient',
       description: 'The mail recipient',
       schema: {
@@ -50,6 +57,7 @@ async function initsendMailCommand({
   log: LogService;
 }): Promise<
   WhookCommandHandler<{
+    sender: string;
     recipient: string;
     subject: string;
     message: string;
@@ -57,10 +65,11 @@ async function initsendMailCommand({
 > {
   return async (args) => {
     const {
-      namedArguments: { recipient, subject, message },
+      namedArguments: { sender, recipient, subject, message },
     } = args;
 
     await sendMail({
+      from: sender,
       to: recipient,
       subject,
       text: message,
