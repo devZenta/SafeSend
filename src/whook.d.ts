@@ -19,6 +19,7 @@ import { type JWTServiceConfig, type JWTEnvVars } from 'jwt-service';
 import { type BaseAppEnvVars, type TimeMockConfig } from 'application-services';
 import { type RouteDefinitionFilterEnvVars } from './services/ROUTE_DEFINITION_FILTER.ts';
 import { type AppEnv } from './index.ts';
+import { type SmtpServerConfig } from './services/smtpServer.ts';
 
 /* Architecture Note #2.1: Typings
 
@@ -49,6 +50,7 @@ declare module 'application-services' {
       WhookCORSConfig,
       APIConfig,
       JWTServiceConfig,
+      SmtpServerConfig,
       TimeMockConfig {}
 }
 

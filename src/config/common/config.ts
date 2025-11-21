@@ -74,6 +74,10 @@ const CONFIG: Omit<AppConfig, 'HOST'> = {
     ...DEFAULT_SWAGGER_UI_OPTIONS,
     defaultModelRendering: 'model',
   },
+  SMTP_OPTIONS: {
+    port: 2025,
+    host: 'localhost',
+  },
 };
 
 export default CONFIG;
