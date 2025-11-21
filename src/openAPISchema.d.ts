@@ -27,6 +27,9 @@ declare interface paths {
   '/stream': {
     put: operations['putEchoedStream'];
   };
+  '/knock/{knockId}/validation': {
+    put: operations['putKnockValidation'];
+  };
   '/ping': {
     get: operations['getPing'];
   };
@@ -138,6 +141,19 @@ declare interface operations {
     requestBody: components['requestBodies']['Stream'];
     responses: {
       201: components['responses']['Stream'];
+    };
+  };
+  putKnockValidation: {
+    requestBody: object;
+    responses: {
+      200: {
+        body: object;
+      };
+    };
+    parameters: {
+      path: {
+        knockId: string;
+      };
     };
   };
   getPing: {
