@@ -18,7 +18,7 @@ export const definition = {
         name: 'knockId',
         in: 'path',
         required: true,
-        schema: { type: 'string'},
+        schema: { type: 'string' },
       },
     ],
     requestBody: {
