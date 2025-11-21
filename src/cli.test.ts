@@ -1,6 +1,7 @@
 import { describe, test, expect, jest } from '@jest/globals';
 import { exec } from 'node:child_process';
 import { YError } from 'yerror';
+import { join as joinPaths } from 'node:path';
 
 jest.setTimeout(30000);
 
@@ -11,22 +12,24 @@ describe('commands should work', () => {
     );
 
     expect({
-      stdout: stdout.replace(/( |"|')([^ ]+)\/whook\//g, ' /whook/'),
-      stderr: stderr.replace(/( |"|')([^ ]+)\/whook\//g, ' /whook/'),
+      stdout: replacePaths(stdout),
+      stderr: replacePaths(stderr),
     }).toMatchInlineSnapshot(`
 {
-  "stderr": "⚡ - Loading configurations from /whook/packages/whook-example/dist/config/local/config.js".
+  "stderr": "⚡ - Loading configurations from "file:///project/dist/config/local/config.js".
 🤖 - Initializing the \`$autoload\` service.
 🔴 - Running with "local" application environment.
 🔂 - Running with "test" node environment.
+🖬 - Loaded .env file at "/project/.env.app.local".
 ➕ - Wrapping definitions for CORS.
 ✔ - Found a free port "8000"
 On air 🚀🌕
 ",
   "stdout": "
 
-# Provided by "@whook/example": 1 commands
+# Provided by "safesend": 2 commands
 - printEnv: A command printing every env values
+- sendMail: A command to send mails
 
 
 # Provided by "@whook/whook": 8 commands
@@ -55,14 +58,15 @@ On air 🚀🌕
     );
 
     expect({
-      stdout: stdout.replace(/( |"|')([^ ]+)\/whook\//g, ' /whook/'),
-      stderr: stderr.replace(/( |"|')([^ ]+)\/whook\//g, ' /whook/'),
+      stdout: replacePaths(stdout),
+      stderr: replacePaths(stderr),
     }).toMatchInlineSnapshot(`
 {
-  "stderr": "⚡ - Loading configurations from /whook/packages/whook-example/dist/config/local/config.js".
+  "stderr": "⚡ - Loading configurations from "file:///project/dist/config/local/config.js".
 🤖 - Initializing the \`$autoload\` service.
 🔴 - Running with "local" application environment.
 🔂 - Running with "test" node environment.
+🖬 - Loaded .env file at "/project/.env.app.local".
 ➕ - Wrapping definitions for CORS.
 ✔ - Found a free port "8000"
 On air 🚀🌕
@@ -79,8 +83,8 @@ On air 🚀🌕
     );
 
     expect({
-      stdout: stdout.replace(/( |"|')([^ ]+)\/whook\//g, ' /whook/'),
-      stderr: stderr.replace(/( |"|')([^ ]+)\/whook\//g, ' /whook/'),
+      stdout: replacePaths(stdout),
+      stderr: replacePaths(stderr),
     }).toMatchInlineSnapshot(`
 {
   "stderr": "⚡ - Loading configurations from /whook/packages/whook-example/dist/config/local/config.js".
@@ -110,4 +114,11 @@ async function execCommand(
       resolve({ stdout, stderr });
     });
   });
+}
+
+function replacePaths(text: string) {
+  return text.replaceAll(
+    joinPaths(import.meta.dirname, '..').replace(/^file:\/\//, ''),
+    '/project',
+  );
 }

@@ -20,7 +20,8 @@ import { join } from 'node:path';
 import { type Knifecycle } from 'knifecycle';
 import { type JWTService } from 'jwt-service';
 import { type Logger } from 'common-services';
-import { WhookAuthenticationData } from '@whook/authorization';
+import { type WhookAuthenticationData } from '@whook/authorization';
+import { join as joinPaths } from 'node:path';
 
 const _packageJSON = JSON.parse(readFileSync('package.json').toString());
 
@@ -2026,11 +2027,18 @@ function filterPaths(strs) {
   return strs.map((str) =>
     'string' !== typeof str
       ? str
-      : str
+      : replacePaths(str)
           .replace(
-            /("|'| |^)(file:\/\/|)(\/[^/]+){1,}\/whook\//g,
+            /("|'| |^)(file:\/\/|)(\/[^/]+){1,}\/whook\//gi,
             '$1file:///home/whoiam/projects/whook/',
           )
-          .replace(/(node:internal(?:\/\w+){1,}):\d+:\d+/g, '$1:x:x'),
+          .replace(/(node:internal(?:\/\w+){1,}):\d+:\d+/gi, '$1:x:x'),
+  );
+}
+
+function replacePaths(text: string) {
+  return text.replaceAll(
+    joinPaths(import.meta.dirname, '..').replace(/^file:\/\//, ''),
+    '/project',
   );
 }

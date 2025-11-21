@@ -258,8 +258,8 @@ exports[`API should work 1`] = `
       },
     },
     "info": {
-      "description": "A basic Whook server",
-      "title": "@whook/example",
+      "description": "Let's kill spams once for all.",
+      "title": "safesend",
       "version": "1.1.0",
     },
     "openapi": "3.1.0",
