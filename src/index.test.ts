@@ -101,301 +101,398 @@ describe('runProcess', () => {
   test('should work', async () => {
     expect(logger.output.mock.calls.length).toEqual(0);
     expect({
-      debugCalls: logger.debug.mock.calls.map(filterPaths).sort(sortLogs),
-      logErrorCalls: logger.error.mock.calls.map(filterPaths).sort(sortLogs),
-    }).toMatchInlineSnapshot(`
+  debugCalls: logger.debug.mock.calls.map(filterPaths).sort(sortLogs),
+  logErrorCalls: logger.error.mock.calls.map(filterPaths).sort(sortLogs)
+}).toMatchInlineSnapshot(`
 {
   "debugCalls": [
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/packages/whook-example/src/index.test.ts:78:59)",
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
       "⌛ - Delay service initialized.",
@@ -605,43 +702,43 @@ describe('runProcess', () => {
       "⏳ - Skipped "route.test.js.map" per file patterns.",
     ],
     [
-      "✅ - Module path of "API" found at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/API.ts".",
+      "✅ - Module path of "API" found at "file:///project/src/services/API.ts".",
     ],
     [
-      "✅ - Module path of "CLOCK_MOCK" found at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/CLOCK_MOCK.ts".",
+      "✅ - Module path of "CLOCK_MOCK" found at "file:///project/src/services/CLOCK_MOCK.ts".",
     ],
     [
-      "✅ - Module path of "MECHANISMS" found at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/MECHANISMS.ts".",
+      "✅ - Module path of "MECHANISMS" found at "file:///project/src/services/MECHANISMS.ts".",
     ],
     [
-      "✅ - Module path of "ROUTE_DEFINITION_FILTER" found at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/ROUTE_DEFINITION_FILTER.ts".",
+      "✅ - Module path of "ROUTE_DEFINITION_FILTER" found at "file:///project/src/services/ROUTE_DEFINITION_FILTER.ts".",
     ],
     [
-      "✅ - Module path of "authentication" found at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/authentication.ts".",
+      "✅ - Module path of "authentication" found at "file:///project/src/services/authentication.ts".",
     ],
     [
-      "✅ - Module path of "getDelay" found at "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getDelay.ts".",
+      "✅ - Module path of "getDelay" found at "file:///project/src/routes/getDelay.ts".",
     ],
     [
-      "✅ - Module path of "getDiagnostic" found at "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getDiagnostic.ts".",
+      "✅ - Module path of "getDiagnostic" found at "file:///project/src/routes/getDiagnostic.ts".",
     ],
     [
-      "✅ - Module path of "getOpenAPI" found at "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getOpenAPI.ts".",
+      "✅ - Module path of "getOpenAPI" found at "file:///project/src/routes/getOpenAPI.ts".",
     ],
     [
-      "✅ - Module path of "getParameters" found at "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getParameters.ts".",
+      "✅ - Module path of "getParameters" found at "file:///project/src/routes/getParameters.ts".",
     ],
     [
       "✅ - Module path of "getPing" found at "@whook/whook/dist/routes/getPing.js".",
     ],
     [
-      "✅ - Module path of "getTime" found at "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getTime.ts".",
+      "✅ - Module path of "getTime" found at "file:///project/src/routes/getTime.ts".",
     ],
     [
-      "✅ - Module path of "handleMinutes" found at "file:///home/whoiam/projects/whook/packages/whook-example/src/crons/handleMinutes.ts".",
+      "✅ - Module path of "handleMinutes" found at "file:///project/src/crons/handleMinutes.ts".",
     ],
     [
-      "✅ - Module path of "jwtToken" found at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/jwtToken.ts".",
+      "✅ - Module path of "jwtToken" found at "file:///project/src/services/jwtToken.ts".",
     ],
     [
       "✅ - Module path of "localCronRunner" found at "@whook/whook/dist/services/localCronRunner.js".",
@@ -650,16 +747,16 @@ describe('runProcess', () => {
       "✅ - Module path of "optionsWithCORS" found at "@whook/cors/dist/routes/optionsWithCORS.js".",
     ],
     [
-      "✅ - Module path of "postCronRun" found at "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/postCronRun.ts".",
+      "✅ - Module path of "postCronRun" found at "file:///project/src/routes/postCronRun.ts".",
     ],
     [
-      "✅ - Module path of "putEcho" found at "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/putEcho.ts".",
+      "✅ - Module path of "putEcho" found at "file:///project/src/routes/putEcho.ts".",
     ],
     [
-      "✅ - Module path of "putEchoedStream" found at "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/putEchoedStream.ts".",
+      "✅ - Module path of "putEchoedStream" found at "file:///project/src/routes/putEchoedStream.ts".",
     ],
     [
-      "✅ - Module path of "putTime" found at "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/putTime.ts".",
+      "✅ - Module path of "putTime" found at "file:///project/src/routes/putTime.ts".",
     ],
     [
       "✅ - Module path of "wrapRouteHandlerWithAuthorization" found at "@whook/authorization/dist/wrappers/wrapRouteHandlerWithAuthorization.js".",
@@ -671,16 +768,16 @@ describe('runProcess', () => {
       "❤️ - Initializing the APM service.",
     ],
     [
-      "➰ - Plugin "@whook/authorization" source path resolved to "file:///home/whoiam/projects/whook/packages/whook-authorization/dist" with "wrappers" types.",
+      "➰ - Plugin "@whook/authorization" source path resolved to "file:///project/node_modules/@whook/authorization/dist" with "wrappers" types.",
     ],
     [
-      "➰ - Plugin "@whook/cors" source path resolved to "file:///home/whoiam/projects/whook/packages/whook-cors/dist" with "routes, services, wrappers" types.",
+      "➰ - Plugin "@whook/cors" source path resolved to "file:///project/node_modules/@whook/cors/dist" with "routes, services, wrappers" types.",
     ],
     [
       "➰ - Plugin "@whook/whook" source path resolved to "file:///home/whoiam/projects/whook/dist" with "commands, routes, services" types.",
     ],
     [
-      "➰ - Plugin "__project__" source path resolved to "file:///home/whoiam/projects/whook/packages/whook-example/src" with "commands, crons, routes, services" types.",
+      "➰ - Plugin "__project__" source path resolved to "file:///project/src" with "commands, crons, routes, services" types.",
     ],
     [
       "🈁 - Gathering the project commands modules.",
@@ -701,7 +798,7 @@ describe('runProcess', () => {
       "🈁 - Generating the DEFINITIONS",
     ],
     [
-      "🈁 - Handler module at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/routes/optionsWithCORS.js" exports no definition!",
+      "🈁 - Handler module at "file:///project/node_modules/@whook/cors/dist/routes/optionsWithCORS.js" exports no definition!",
     ],
     [
       "🍀 - Trying to find "API" module path in "__project__".",
@@ -1067,43 +1164,43 @@ describe('runProcess', () => {
       "💱 - HTTP Transaction initialized.",
     ],
     [
-      "💿 - Loading "API" initializer from "file:///home/whoiam/projects/whook/packages/whook-example/src/services/API.ts".",
+      "💿 - Loading "API" initializer from "file:///project/src/services/API.ts".",
     ],
     [
-      "💿 - Loading "CLOCK_MOCK" initializer from "file:///home/whoiam/projects/whook/packages/whook-example/src/services/CLOCK_MOCK.ts".",
+      "💿 - Loading "CLOCK_MOCK" initializer from "file:///project/src/services/CLOCK_MOCK.ts".",
     ],
     [
-      "💿 - Loading "MECHANISMS" initializer from "file:///home/whoiam/projects/whook/packages/whook-example/src/services/MECHANISMS.ts".",
+      "💿 - Loading "MECHANISMS" initializer from "file:///project/src/services/MECHANISMS.ts".",
     ],
     [
-      "💿 - Loading "ROUTE_DEFINITION_FILTER" initializer from "file:///home/whoiam/projects/whook/packages/whook-example/src/services/ROUTE_DEFINITION_FILTER.ts".",
+      "💿 - Loading "ROUTE_DEFINITION_FILTER" initializer from "file:///project/src/services/ROUTE_DEFINITION_FILTER.ts".",
     ],
     [
-      "💿 - Loading "authentication" initializer from "file:///home/whoiam/projects/whook/packages/whook-example/src/services/authentication.ts".",
+      "💿 - Loading "authentication" initializer from "file:///project/src/services/authentication.ts".",
     ],
     [
-      "💿 - Loading "getDelay" initializer from "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getDelay.ts".",
+      "💿 - Loading "getDelay" initializer from "file:///project/src/routes/getDelay.ts".",
     ],
     [
-      "💿 - Loading "getDiagnostic" initializer from "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getDiagnostic.ts".",
+      "💿 - Loading "getDiagnostic" initializer from "file:///project/src/routes/getDiagnostic.ts".",
     ],
     [
-      "💿 - Loading "getOpenAPI" initializer from "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getOpenAPI.ts".",
+      "💿 - Loading "getOpenAPI" initializer from "file:///project/src/routes/getOpenAPI.ts".",
     ],
     [
-      "💿 - Loading "getParameters" initializer from "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getParameters.ts".",
+      "💿 - Loading "getParameters" initializer from "file:///project/src/routes/getParameters.ts".",
     ],
     [
       "💿 - Loading "getPing" initializer from "@whook/whook/dist/routes/getPing.js".",
     ],
     [
-      "💿 - Loading "getTime" initializer from "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getTime.ts".",
+      "💿 - Loading "getTime" initializer from "file:///project/src/routes/getTime.ts".",
     ],
     [
-      "💿 - Loading "handleMinutes" initializer from "file:///home/whoiam/projects/whook/packages/whook-example/src/crons/handleMinutes.ts".",
+      "💿 - Loading "handleMinutes" initializer from "file:///project/src/crons/handleMinutes.ts".",
     ],
     [
-      "💿 - Loading "jwtToken" initializer from "file:///home/whoiam/projects/whook/packages/whook-example/src/services/jwtToken.ts".",
+      "💿 - Loading "jwtToken" initializer from "file:///project/src/services/jwtToken.ts".",
     ],
     [
       "💿 - Loading "localCronRunner" initializer from "@whook/whook/dist/services/localCronRunner.js".",
@@ -1112,16 +1209,16 @@ describe('runProcess', () => {
       "💿 - Loading "optionsWithCORS" initializer from "@whook/cors/dist/routes/optionsWithCORS.js".",
     ],
     [
-      "💿 - Loading "postCronRun" initializer from "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/postCronRun.ts".",
+      "💿 - Loading "postCronRun" initializer from "file:///project/src/routes/postCronRun.ts".",
     ],
     [
-      "💿 - Loading "putEcho" initializer from "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/putEcho.ts".",
+      "💿 - Loading "putEcho" initializer from "file:///project/src/routes/putEcho.ts".",
     ],
     [
-      "💿 - Loading "putEchoedStream" initializer from "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/putEchoedStream.ts".",
+      "💿 - Loading "putEchoedStream" initializer from "file:///project/src/routes/putEchoedStream.ts".",
     ],
     [
-      "💿 - Loading "putTime" initializer from "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/putTime.ts".",
+      "💿 - Loading "putTime" initializer from "file:///project/src/routes/putTime.ts".",
     ],
     [
       "💿 - Loading "wrapRouteHandlerWithAuthorization" initializer from "@whook/authorization/dist/wrappers/wrapRouteHandlerWithAuthorization.js".",
@@ -1130,43 +1227,43 @@ describe('runProcess', () => {
       "💿 - Loading "wrapRouteHandlerWithCORS" initializer from "@whook/cors/dist/wrappers/wrapRouteHandlerWithCORS.js".",
     ],
     [
-      "💿 - Service "API" found in "file:///home/whoiam/projects/whook/packages/whook-example/src/services/API.ts".",
+      "💿 - Service "API" found in "file:///project/src/services/API.ts".",
     ],
     [
-      "💿 - Service "CLOCK_MOCK" found in "file:///home/whoiam/projects/whook/packages/whook-example/src/services/CLOCK_MOCK.ts".",
+      "💿 - Service "CLOCK_MOCK" found in "file:///project/src/services/CLOCK_MOCK.ts".",
     ],
     [
-      "💿 - Service "MECHANISMS" found in "file:///home/whoiam/projects/whook/packages/whook-example/src/services/MECHANISMS.ts".",
+      "💿 - Service "MECHANISMS" found in "file:///project/src/services/MECHANISMS.ts".",
     ],
     [
-      "💿 - Service "ROUTE_DEFINITION_FILTER" found in "file:///home/whoiam/projects/whook/packages/whook-example/src/services/ROUTE_DEFINITION_FILTER.ts".",
+      "💿 - Service "ROUTE_DEFINITION_FILTER" found in "file:///project/src/services/ROUTE_DEFINITION_FILTER.ts".",
     ],
     [
-      "💿 - Service "authentication" found in "file:///home/whoiam/projects/whook/packages/whook-example/src/services/authentication.ts".",
+      "💿 - Service "authentication" found in "file:///project/src/services/authentication.ts".",
     ],
     [
-      "💿 - Service "getDelay" found in "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getDelay.ts".",
+      "💿 - Service "getDelay" found in "file:///project/src/routes/getDelay.ts".",
     ],
     [
-      "💿 - Service "getDiagnostic" found in "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getDiagnostic.ts".",
+      "💿 - Service "getDiagnostic" found in "file:///project/src/routes/getDiagnostic.ts".",
     ],
     [
-      "💿 - Service "getOpenAPI" found in "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getOpenAPI.ts".",
+      "💿 - Service "getOpenAPI" found in "file:///project/src/routes/getOpenAPI.ts".",
     ],
     [
-      "💿 - Service "getParameters" found in "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getParameters.ts".",
+      "💿 - Service "getParameters" found in "file:///project/src/routes/getParameters.ts".",
     ],
     [
       "💿 - Service "getPing" found in "@whook/whook/dist/routes/getPing.js".",
     ],
     [
-      "💿 - Service "getTime" found in "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getTime.ts".",
+      "💿 - Service "getTime" found in "file:///project/src/routes/getTime.ts".",
     ],
     [
-      "💿 - Service "handleMinutes" found in "file:///home/whoiam/projects/whook/packages/whook-example/src/crons/handleMinutes.ts".",
+      "💿 - Service "handleMinutes" found in "file:///project/src/crons/handleMinutes.ts".",
     ],
     [
-      "💿 - Service "jwtToken" found in "file:///home/whoiam/projects/whook/packages/whook-example/src/services/jwtToken.ts".",
+      "💿 - Service "jwtToken" found in "file:///project/src/services/jwtToken.ts".",
     ],
     [
       "💿 - Service "localCronRunner" found in "@whook/whook/dist/services/localCronRunner.js".",
@@ -1175,16 +1272,16 @@ describe('runProcess', () => {
       "💿 - Service "optionsWithCORS" found in "@whook/cors/dist/routes/optionsWithCORS.js".",
     ],
     [
-      "💿 - Service "postCronRun" found in "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/postCronRun.ts".",
+      "💿 - Service "postCronRun" found in "file:///project/src/routes/postCronRun.ts".",
     ],
     [
-      "💿 - Service "putEcho" found in "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/putEcho.ts".",
+      "💿 - Service "putEcho" found in "file:///project/src/routes/putEcho.ts".",
     ],
     [
-      "💿 - Service "putEchoedStream" found in "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/putEchoedStream.ts".",
+      "💿 - Service "putEchoedStream" found in "file:///project/src/routes/putEchoedStream.ts".",
     ],
     [
-      "💿 - Service "putTime" found in "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/putTime.ts".",
+      "💿 - Service "putTime" found in "file:///project/src/routes/putTime.ts".",
     ],
     [
       "💿 - Service "wrapRouteHandlerWithAuthorization" found in "@whook/authorization/dist/wrappers/wrapRouteHandlerWithAuthorization.js".",
@@ -1322,220 +1419,220 @@ describe('runProcess', () => {
       "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/dist/wrappers/wrapRouteHandlerWithCORS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/BUFFER_LIMIT.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/BUFFER_LIMIT.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/COERCION_OPTIONS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/COERCION_OPTIONS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/COMMAND_DEFINITION_FILTER.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/COMMAND_DEFINITION_FILTER.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/CONSUMER_DEFINITION_FILTER.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/CONSUMER_DEFINITION_FILTER.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/CRON_DEFINITION_FILTER.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/CRON_DEFINITION_FILTER.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/CRON_RUNNER_OPTIONS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/CRON_RUNNER_OPTIONS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/DECODERS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/DECODERS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/DEFAULT_ERROR_CODE.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/DEFAULT_ERROR_CODE.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/ENCODERS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/ENCODERS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/HTTP_SERVER_OPTIONS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/HTTP_SERVER_OPTIONS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/JWT_SECRET_ENV_NAME.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/JWT_SECRET_ENV_NAME.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/MAX_CLEAR_RATIO.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/MAX_CLEAR_RATIO.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/PARSERS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/PARSERS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/QUERY_PARSER_OPTIONS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/QUERY_PARSER_OPTIONS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/SCHEMA_VALIDATORS_OPTIONS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/SCHEMA_VALIDATORS_OPTIONS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/SHIELD_CHAR.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/SHIELD_CHAR.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/SIGNALS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/SIGNALS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/STRINGIFIERS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/STRINGIFIERS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/TIMEOUT.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/TIMEOUT.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/TRANSFORMER_DEFINITION_FILTER.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/TRANSFORMER_DEFINITION_FILTER.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/fetcher.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/fetcher.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-authorization/dist/services/uniqueId.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/uniqueId.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/BUFFER_LIMIT.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/BUFFER_LIMIT.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/COERCION_OPTIONS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/COERCION_OPTIONS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/COMMAND_DEFINITION_FILTER.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/COMMAND_DEFINITION_FILTER.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/CONSUMER_DEFINITION_FILTER.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/CONSUMER_DEFINITION_FILTER.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/CRON_DEFINITION_FILTER.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/CRON_DEFINITION_FILTER.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/CRON_RUNNER_OPTIONS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/CRON_RUNNER_OPTIONS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/DECODERS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/DECODERS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/DEFAULT_ERROR_CODE.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/DEFAULT_ERROR_CODE.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/ENCODERS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/ENCODERS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/HTTP_SERVER_OPTIONS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/HTTP_SERVER_OPTIONS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/JWT_SECRET_ENV_NAME.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/JWT_SECRET_ENV_NAME.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/MAX_CLEAR_RATIO.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/MAX_CLEAR_RATIO.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/PARSERS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/PARSERS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/QUERY_PARSER_OPTIONS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/QUERY_PARSER_OPTIONS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/SCHEMA_VALIDATORS_OPTIONS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/SCHEMA_VALIDATORS_OPTIONS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/SHIELD_CHAR.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/SHIELD_CHAR.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/SIGNALS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/SIGNALS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/STRINGIFIERS.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/STRINGIFIERS.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/TIMEOUT.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/TIMEOUT.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/TRANSFORMER_DEFINITION_FILTER.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/TRANSFORMER_DEFINITION_FILTER.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/fetcher.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/fetcher.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/services/uniqueId.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/uniqueId.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-cors/dist/wrappers/wrapRouteHandlerWithAuthorization.js".",
+      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/wrappers/wrapRouteHandlerWithAuthorization.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getPing.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/routes/getPing.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/optionsWithCORS.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/routes/optionsWithCORS.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/BUFFER_LIMIT.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/BUFFER_LIMIT.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/COERCION_OPTIONS.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/COERCION_OPTIONS.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/COMMAND_DEFINITION_FILTER.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/COMMAND_DEFINITION_FILTER.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/CONSUMER_DEFINITION_FILTER.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/CONSUMER_DEFINITION_FILTER.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/CRON_DEFINITION_FILTER.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/CRON_DEFINITION_FILTER.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/CRON_RUNNER_OPTIONS.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/CRON_RUNNER_OPTIONS.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/DECODERS.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/DECODERS.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/DEFAULT_ERROR_CODE.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/DEFAULT_ERROR_CODE.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/ENCODERS.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/ENCODERS.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/HTTP_SERVER_OPTIONS.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/HTTP_SERVER_OPTIONS.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/JWT_SECRET_ENV_NAME.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/JWT_SECRET_ENV_NAME.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/MAX_CLEAR_RATIO.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/MAX_CLEAR_RATIO.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/PARSERS.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/PARSERS.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/QUERY_PARSER_OPTIONS.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/QUERY_PARSER_OPTIONS.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/SCHEMA_VALIDATORS_OPTIONS.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/SCHEMA_VALIDATORS_OPTIONS.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/SHIELD_CHAR.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/SHIELD_CHAR.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/SIGNALS.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/SIGNALS.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/STRINGIFIERS.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/STRINGIFIERS.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/TIMEOUT.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/TIMEOUT.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/TRANSFORMER_DEFINITION_FILTER.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/TRANSFORMER_DEFINITION_FILTER.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/fetcher.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/fetcher.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/localCronRunner.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/localCronRunner.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/services/uniqueId.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/services/uniqueId.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/wrappers/wrapRouteHandlerWithAuthorization.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/wrappers/wrapRouteHandlerWithAuthorization.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/packages/whook-example/src/wrappers/wrapRouteHandlerWithCORS.ts".",
+      "🚫 - File doesn't exist at "file:///project/src/wrappers/wrapRouteHandlerWithCORS.ts".",
     ],
     [
       "🚫 - Module path of "BUFFER_LIMIT" not found.",
@@ -1652,91 +1749,94 @@ describe('runProcess', () => {
       "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/dist/routes/getPing.js".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-cors/dist/routes/optionsWithCORS.js".",
+      "🛂 - Dynamic import of "file:///project/node_modules/@whook/cors/dist/routes/optionsWithCORS.js".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/commands/printEnv.ts".",
+      "🛂 - Dynamic import of "file:///project/src/commands/printEnv.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/config/local/config.ts".",
+      "🛂 - Dynamic import of "file:///project/src/commands/sendMail.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/crons/handleMinutes.ts".",
+      "🛂 - Dynamic import of "file:///project/src/config/local/config.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/crons/handleMinutes.ts".",
+      "🛂 - Dynamic import of "file:///project/src/crons/handleMinutes.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getDelay.ts".",
+      "🛂 - Dynamic import of "file:///project/src/crons/handleMinutes.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getDelay.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/getDelay.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getDiagnostic.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/getDelay.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getDiagnostic.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/getDiagnostic.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getOpenAPI.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/getDiagnostic.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getOpenAPI.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/getOpenAPI.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getParameters.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/getOpenAPI.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getParameters.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/getParameters.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getTime.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/getParameters.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/getTime.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/getTime.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/postCronRun.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/getTime.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/postCronRun.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/postCronRun.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/putEcho.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/postCronRun.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/putEcho.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/putEcho.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/putEchoedStream.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/putEcho.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/putEchoedStream.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/putEchoedStream.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/putTime.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/putEchoedStream.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/routes/putTime.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/putTime.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/services/API.ts".",
+      "🛂 - Dynamic import of "file:///project/src/routes/putTime.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/services/CLOCK_MOCK.ts".",
+      "🛂 - Dynamic import of "file:///project/src/services/API.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/services/MECHANISMS.ts".",
+      "🛂 - Dynamic import of "file:///project/src/services/CLOCK_MOCK.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/services/ROUTE_DEFINITION_FILTER.ts".",
+      "🛂 - Dynamic import of "file:///project/src/services/MECHANISMS.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/services/authentication.ts".",
+      "🛂 - Dynamic import of "file:///project/src/services/ROUTE_DEFINITION_FILTER.ts".",
     ],
     [
-      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/packages/whook-example/src/services/jwtToken.ts".",
+      "🛂 - Dynamic import of "file:///project/src/services/authentication.ts".",
+    ],
+    [
+      "🛂 - Dynamic import of "file:///project/src/services/jwtToken.ts".",
     ],
     [
       "🛂 - Dynamic import of "swagger-ui-dist".",
@@ -1765,7 +1865,7 @@ describe('runProcess', () => {
       "⚠️ - Using fake auth mechanism!",
     ],
     [
-      "⚡ - Loading configurations from "file:///home/whoiam/projects/whook/packages/whook-example/src/config/local/config.ts".",
+      "⚡ - Loading configurations from "file:///project/src/config/local/config.ts".",
     ],
     [
       "➕ - Wrapping definitions for CORS.",

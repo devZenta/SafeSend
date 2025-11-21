@@ -83,14 +83,15 @@ On air 🚀🌕
     );
 
     expect({
-      stdout: replacePaths(stdout),
-      stderr: replacePaths(stderr),
-    }).toMatchInlineSnapshot(`
+  stdout: replacePaths(stdout),
+  stderr: replacePaths(stderr)
+}).toMatchInlineSnapshot(`
 {
-  "stderr": "⚡ - Loading configurations from /whook/packages/whook-example/dist/config/local/config.js".
+  "stderr": "⚡ - Loading configurations from "file:///project/dist/config/local/config.js".
 🤖 - Initializing the \`$autoload\` service.
 🔴 - Running with "local" application environment.
 🔂 - Running with "test" node environment.
+🖬 - Loaded .env file at "/project/.env.app.local".
 ➕ - Wrapping definitions for CORS.
 ✔ - Found a free port "8000"
 On air 🚀🌕
