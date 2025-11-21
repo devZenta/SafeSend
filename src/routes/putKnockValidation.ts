@@ -60,7 +60,7 @@ async function initPutKnockValidation({
     path: { knockId },
     body,
   }) => {
-    log ("warning", `Validated the email: ${knockId}`)
+    log ("warning", `Validated knock: ${knockId}`)
     return {
       status: 200,
       headers: {},
