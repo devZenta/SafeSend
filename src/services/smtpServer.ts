@@ -97,10 +97,15 @@ async function initSmtpServer({
         }
 
         if (token === 'knock') {
-          // Generate a random token
-          // Save it to the token store with validated set to false
-          // Build the link to validate it
-          const knockLink = ``;
+          
+          const newToken = (await randomBytes(32)).toString('hex');
+          
+          await tokenStore.set(newToken, {
+            pattern: fromAddress,
+            validated: false,
+          });
+          
+          const knockLink = `${BASE_URL}/knock/${newToken}/validation`;
           await sendMail({
             from: fromAddress,
             to: toAddress,
@@ -113,11 +118,46 @@ async function initSmtpServer({
             `💌 - Knock email sent to ${toAddress} (session: ${session.id}).`,
           );
 
-          callback();
+          return callback();
         }
 
-        // Check the token and the email pattern
+        const tokenPayload = await tokenStore.get(token);
 
+        if (!tokenPayload) {
+          log(
+            'warning',
+            `💌 - Rejected mail from ${fromAddress} due to invalid token (session: ${session.id}).`,
+          );
+          return callback(
+            Object.assign(new Error('Invalid token'), { 
+              responseCode: 553 
+            }),
+          );
+        }
+
+        if (!tokenPayload.validated) {
+          log(
+            'warning',
+            `💌 - Rejected mail from ${fromAddress} due to unvalidated token (session: ${session.id}).`,
+          );
+          return callback(
+            Object.assign(new Error('Token not validated'), {
+              responseCode: 553,
+            }),
+          );
+        }
+
+        if (tokenPayload.pattern !== fromAddress) {
+          log(
+            'warning',
+            `💌 - Rejected mail from ${fromAddress} due to pattern mismatch (session: ${session.id}).`,
+          );
+          return callback(
+            Object.assign(new Error('Email address does not match token pattern'), {
+              responseCode: 553,
+            }),
+          );
+        }
         await sendMail({
           from: fromAddress,
           to: toAddress,
