@@ -23,9 +23,26 @@ node --run jest -- -u
 npm run watch
 ```
 
-Testing email server:
+Testing email knocking workflow:
+
+
 ```sh
-SMTP_CONNECTION_URL=smtp://localhost:2025 node --run dev -- sendMail --recipient text@xx.com --sender test@enigma.com --subject test --message test
+# This should be rejected per domain filtering
+SMTP_CONNECTION_URL=smtp://localhost:2025 node --run dev -- sendMail --recipient text@whatever.com --sender test@xmp.com --subject test --message test
+
+# This should be rejected and send an email to ask sender to knock
+SMTP_CONNECTION_URL=smtp://localhost:2025 node --run dev -- sendMail --recipient text@enigma.com --sender test@xmp.com --subject test --message test
+
+# This should knock properly
+SMTP_CONNECTION_URL=smtp://localhost:2025 node --run dev -- sendMail --recipient text+knock@enigma.com --sender test@xmp.com --subject test --message test
+
+# This should work with the appropriate token
+SMTP_CONNECTION_URL=smtp://localhost:2025 node --run dev -- sendMail --recipient text+$APPROPRIATE_TOKEN@enigma.com --sender test@xmp.com --subject test --message test
+```
+
+You can debug the token store anytime by running:
+```sh
+cat /tmp/token_store.json
 ```
 
 ## Usage
