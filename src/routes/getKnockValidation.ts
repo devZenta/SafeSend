@@ -1,0 +1,51 @@
+import { autoService, location } from 'knifecycle';
+import {
+  type WhookRouteDefinition,
+  type WhookRouteTypedHandler,
+} from '@whook/whook';
+import { type LogService } from 'common-services';
+import initPutKnockValidation, {
+  definition as baseDefinition,
+} from './putKnockValidation.js';
+
+export const definition = {
+  path: '/knock/{knockId}/validation',
+  method: 'get',
+  operation: {
+    operationId: 'getKnockValidation',
+    summary: 'Allow to validate a knock with a link',
+    tags: ['system'],
+    parameters: baseDefinition.operation.parameters,
+    responses: {
+      200: {
+        description: 'Success',
+        content: {
+          'application/json': {
+            schema: {
+              type: 'object',
+            },
+          },
+        },
+      },
+    },
+  },
+} as const satisfies WhookRouteDefinition;
+
+async function initGetKnockValidation({
+  log,
+  putKnockValidation,
+}: {
+  log: LogService;
+  putKnockValidation: Awaited<ReturnType<typeof initPutKnockValidation>>;
+}) {
+  const handler: WhookRouteTypedHandler<
+    operations[typeof definition.operation.operationId],
+    typeof definition
+  > = async ({ path: { knockId } }) => {
+    return putKnockValidation({ path: { knockId }, body: {} });
+  };
+
+  return handler;
+}
+
+export default location(autoService(initGetKnockValidation), import.meta.url);

@@ -8,6 +8,10 @@ declare interface paths {
   '/diagnostic': {
     get: operations['getDiagnostic'];
   };
+  '/knock/{knockId}/validation': {
+    get: operations['getKnockValidation'];
+    put: operations['putKnockValidation'];
+  };
   '/openAPI': {
     get: operations['getOpenAPI'];
   };
@@ -59,6 +63,31 @@ declare interface operations {
   getDiagnostic: {
     responses: {
       200: components['responses']['Diagnostic'];
+    };
+  };
+  getKnockValidation: {
+    responses: {
+      200: {
+        body: object;
+      };
+    };
+    parameters: {
+      path: {
+        knockId: string;
+      };
+    };
+  };
+  putKnockValidation: {
+    requestBody: object;
+    responses: {
+      200: {
+        body: object;
+      };
+    };
+    parameters: {
+      path: {
+        knockId: string;
+      };
     };
   };
   getOpenAPI: {
