@@ -17,6 +17,7 @@ export type SmtpServerConfig = {
 };
 export type SmtpServerDependencies = SmtpServerConfig & {
   BASE_URL: string;
+  BASE_PATH: string;
   sendMail: SendMailService;
   tokenStore: TokenStoreService;
   randomBytes: RandomBytesService;
@@ -26,6 +27,7 @@ export type SmtpServerDependencies = SmtpServerConfig & {
 async function initSmtpServer({
   SMTP_OPTIONS,
   BASE_URL,
+  BASE_PATH,
   sendMail,
   tokenStore,
   randomBytes,
@@ -97,15 +99,15 @@ async function initSmtpServer({
         }
 
         if (token === 'knock') {
-          
           const newToken = (await randomBytes(32)).toString('hex');
-          
+
           await tokenStore.set(newToken, {
             pattern: fromAddress,
             validated: false,
           });
-          
-          const knockLink = `${BASE_URL}/knock/${newToken}/validation`;
+
+          const knockLink = `${BASE_URL}${BASE_PATH}/knock/${newToken}/validation`;
+
           await sendMail({
             from: fromAddress,
             to: toAddress,
@@ -129,8 +131,8 @@ async function initSmtpServer({
             `💌 - Rejected mail from ${fromAddress} due to invalid token (session: ${session.id}).`,
           );
           return callback(
-            Object.assign(new Error('Invalid token'), { 
-              responseCode: 553 
+            Object.assign(new Error('Invalid token'), {
+              responseCode: 553,
             }),
           );
         }
@@ -153,9 +155,12 @@ async function initSmtpServer({
             `💌 - Rejected mail from ${fromAddress} due to pattern mismatch (session: ${session.id}).`,
           );
           return callback(
-            Object.assign(new Error('Email address does not match token pattern'), {
-              responseCode: 553,
-            }),
+            Object.assign(
+              new Error('Email address does not match token pattern'),
+              {
+                responseCode: 553,
+              },
+            ),
           );
         }
         await sendMail({
