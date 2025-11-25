@@ -83,7 +83,7 @@ Generate the dependency injection graph (here, for the `putTime` handler):
 
 ```sh
 node --run  whook -- __inject putTime,mermaid > DEPENDENCIES.mmd;
-docker run --rm -u `id -u`:`id -g` -v $(pwd):/data minlag/mermaid-cli -i DEPENDENCIES.mmd -o DEPENDENCIES.mmd.svg;
+docker run --rm -u `id -u`:`id -g` -v $(pwd):/data minlag/mermaid-cli --scale 4 -i DEPENDENCIES.mmd -o DEPENDENCIES.mmd.svg;
 ```
 
 List available commands:
