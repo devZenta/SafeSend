@@ -42,21 +42,6 @@ async function initSmtpServer({
         `💌 - Received mail from ${address.address} (session: ${session.id}).`,
       );
 
-      if (!address.address.endsWith(`@${SMTP_OPTIONS.domain}`)) {
-        log(
-          'warning',
-          `💌 - Rejected mail from ${address.address} (session: ${session.id}).`,
-        );
-        return callback(
-          Object.assign(new Error('Relay denied'), { responseCode: 553 }),
-        );
-      }
-
-      log(
-        'warning',
-        `💌 - Proxyed mail from ${address.address} (session: ${session.id}).`,
-      );
-
       callback();
     },
     async onData(stream, session, callback) {
@@ -84,6 +69,22 @@ async function initSmtpServer({
         log(
           'warning',
           `📧 - Email details: from=${fromAddress}, to=${toAddress}, subject=${subject} (session: ${session.id}).`,
+        );
+
+        if (!toAddress.endsWith(`@${SMTP_OPTIONS.domain}`)) {
+          log(
+            'warning',
+            `💌 - Rejected mail from ${fromAddress} to ${toAddress} (session: ${session.id}).`,
+          );
+
+          return callback(
+            Object.assign(new Error('Relay denied'), { responseCode: 553 }),
+          );
+        }
+
+        log(
+          'warning',
+          `💌 - Proxying mail from ${fromAddress} to ${toAddress} (session: ${session.id}).`,
         );
 
         const token = toAddress.split('@')[0].includes('+')
