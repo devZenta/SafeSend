@@ -67,7 +67,7 @@ declare interface operations {
   };
   getKnockValidation: {
     responses: {
-      200: {
+      201: {
         body: object;
       };
     };
@@ -80,7 +80,7 @@ declare interface operations {
   putKnockValidation: {
     requestBody: object;
     responses: {
-      200: {
+      201: {
         body: object;
       };
     };

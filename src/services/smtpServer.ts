@@ -86,16 +86,31 @@ async function initSmtpServer({
           `📧 - Email details: from=${fromAddress}, to=${toAddress}, subject=${subject} (session: ${session.id}).`,
         );
 
-        const token = toAddress.split('@')[0].split('+').pop();
+        const token = toAddress.split('@')[0].includes('+')
+          ? toAddress.split('@')[0].split('+').pop()
+          : undefined;
 
         if (!token) {
           log(
             'warning',
             `💌 - Rejected mail from ${fromAddress} since no token (session: ${session.id}).`,
           );
-          return callback(
-            Object.assign(new Error('Relay denied'), { responseCode: 553 }),
-          );
+          await sendMail({
+            from: toAddress,
+            to: fromAddress,
+            subject: 'Protected mailbox',
+            text: `Hi!
+
+This mailbox is protected by SafeSend, to send emails to it,
+ you first need to send a knock email to: ${toAddress.split('@')[0]}+knock@${toAddress.split('@')[1]}
+
+Below is a copy of your original email:
+Subject: ${subject},
+Content:
+${text}
+            `,
+          });
+          return callback();
         }
 
         if (token === 'knock') {

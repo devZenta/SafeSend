@@ -748,6 +748,9 @@ describe('runProcess', () => {
       "✅ - Module path of "putTime" found at "file:///project/src/routes/putTime.ts".",
     ],
     [
+      "✅ - Module path of "tokenStore" found at "file:///project/src/services/tokenStore.ts".",
+    ],
+    [
       "✅ - Module path of "wrapRouteHandlerWithAuthorization" found at "@whook/authorization/dist/wrappers/wrapRouteHandlerWithAuthorization.js".",
     ],
     [
@@ -1099,6 +1102,9 @@ describe('runProcess', () => {
       "🍀 - Trying to find "putTime" module path in "__project__".",
     ],
     [
+      "🍀 - Trying to find "tokenStore" module path in "__project__".",
+    ],
+    [
       "🍀 - Trying to find "uniqueId" module path in "@whook/authorization".",
     ],
     [
@@ -1201,6 +1207,9 @@ describe('runProcess', () => {
       "💿 - Loading "putTime" initializer from "file:///project/src/routes/putTime.ts".",
     ],
     [
+      "💿 - Loading "tokenStore" initializer from "file:///project/src/services/tokenStore.ts".",
+    ],
+    [
       "💿 - Loading "wrapRouteHandlerWithAuthorization" initializer from "@whook/authorization/dist/wrappers/wrapRouteHandlerWithAuthorization.js".",
     ],
     [
@@ -1265,6 +1274,9 @@ describe('runProcess', () => {
     ],
     [
       "💿 - Service "putTime" found in "file:///project/src/routes/putTime.ts".",
+    ],
+    [
+      "💿 - Service "tokenStore" found in "file:///project/src/services/tokenStore.ts".",
     ],
     [
       "💿 - Service "wrapRouteHandlerWithAuthorization" found in "@whook/authorization/dist/wrappers/wrapRouteHandlerWithAuthorization.js".",
@@ -1814,6 +1826,9 @@ describe('runProcess', () => {
     ],
     [
       "🛂 - Dynamic import of "file:///project/src/services/jwtToken.ts".",
+    ],
+    [
+      "🛂 - Dynamic import of "file:///project/src/services/tokenStore.ts".",
     ],
     [
       "🛂 - Dynamic import of "swagger-ui-dist".",
