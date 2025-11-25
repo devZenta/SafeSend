@@ -505,7 +505,7 @@ exports[`API should work 1`] = `
             },
           ],
           "responses": {
-            "200": {
+            "201": {
               "content": {
                 "application/json": {
                   "schema": {
@@ -566,7 +566,7 @@ exports[`API should work 1`] = `
             "required": true,
           },
           "responses": {
-            "200": {
+            "201": {
               "content": {
                 "application/json": {
                   "schema": {

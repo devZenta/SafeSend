@@ -17,7 +17,7 @@ export const definition = {
     tags: ['system'],
     parameters: baseDefinition.operation.parameters,
     responses: {
-      200: {
+      201: {
         description: 'Success',
         content: {
           'application/json': {
