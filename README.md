@@ -16,6 +16,8 @@ echo 'JWT_SECRET=yop' > .env.app.local
 echo 'SMTP_CONNECTION_URL = smtp://localhost:1025' >> .env.app.local
 # And install the dependencies 
 npm it
+# Update the tests
+node --run jest -- -u
 
 # Then and later, just run the server
 npm run watch
@@ -49,8 +51,8 @@ that explains the notes.
 Feel free to continue creating architecture notes and to regenerate the markdown
 file by running:
 
-```
-npm run architecture
+```sh
+node --run architecture
 ```
 
 ## Dev
@@ -59,28 +61,28 @@ Start the server in development:
 
 ```sh
 # Simple dev mode
-npm run dev
+node --run dev
 
 # Watch mode
-npm run watch
+node --run watch
 ```
 
 Create a new route / cron / service / provider or command:
 
 ```sh
-npx whook create
+node --run create
 ```
 
 Play with the REPL:
 
 ```sh
-npm run repl
+node --run repl
 ```
 
 Generate the dependency injection graph (here, for the `putTime` handler):
 
 ```sh
-npm run --silent whook -- __inject putTime,mermaid > DEPENDENCIES.mmd;
+node --run  whook -- __inject putTime,mermaid > DEPENDENCIES.mmd;
 docker run --rm -u `id -u`:`id -g` -v $(pwd):/data minlag/mermaid-cli -i DEPENDENCIES.mmd -o DEPENDENCIES.mmd.svg;
 ```
 
@@ -88,7 +90,7 @@ List available commands:
 
 ```sh
 ## In dev mode
-npm run dev -- ls
+node --run dev -- ls
 ## With built files
 npx whook ls
 ```
@@ -96,7 +98,7 @@ npx whook ls
 Generate API types:
 
 ```sh
-npm run apitypes
+node --run apitypes
 ```
 
 ## Debug
@@ -104,19 +106,19 @@ npm run apitypes
 Execute a handler in isolation:
 
 ```sh
-npx whook handler --name putEcho --parameters '{"body": { "echo": "YOLO!" }}'
+npx whook route --name putEcho --parameters '{"body": { "echo": "YOLO!" }}'
 ```
 
 Debug `whook` internals:
 
 ```sh
-DEBUG=whook npm run dev
+DEBUG=whook node --run dev
 ```
 
 Debug `knifecycle` internals (dependency injection issues):
 
 ```sh
-DEBUG=knifecycle npm run dev
+DEBUG=knifecycle node --run dev
 ```
 
 ## Author
