@@ -28,6 +28,7 @@ import {
   initAutoload,
   initDefinitions,
   initHTTPRouter,
+  WHOOK_DEFAULT_INJECTED_NAMES,
 } from '@whook/whook';
 import { initErrorHandlerWithCORS, wrapDefinitionsWithCORS } from '@whook/cors';
 import wrapHTTPRouterWithSwaggerUI from '@whook/swagger-ui';
@@ -42,6 +43,19 @@ You can add more application environment here for several
 const APP_ENVS = ['local', 'test', 'production'] as const;
 
 export type AppEnv = (typeof APP_ENVS)[number];
+
+/* Architecture Note #1.1.1.1: Injected names
+
+Per default, Whook embeds the process manager,
+ the HTTP server and optionally the cronRunner.
+
+You can specify any service here that should be
+ launched when your process starts.
+*/
+export const DEFAULT_INJECTED_NAMES = [
+  ...WHOOK_DEFAULT_INJECTED_NAMES,
+  'smtpServer',
+];
 
 /* Architecture Note #1.1.1: runProcess
 
@@ -60,7 +74,7 @@ export async function runProcess<
     injectedNames: DependencyDeclaration[],
     $: T,
   ) => Promise<D> = prepareProcess,
-  injectedNames: DependencyDeclaration[] = ['smtpServer'],
+  injectedNames: DependencyDeclaration[] = DEFAULT_INJECTED_NAMES,
   argv: typeof _argv = _argv,
 ): Promise<D> {
   return runBaseProcess(

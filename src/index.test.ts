@@ -101,397 +101,377 @@ describe('runProcess', () => {
   test('should work', async () => {
     expect(logger.output.mock.calls.length).toEqual(0);
     expect({
-      debugCalls: logger.debug.mock.calls.map(filterPaths).sort(sortLogs),
-      logErrorCalls: logger.error.mock.calls.map(filterPaths).sort(sortLogs),
-    }).toMatchInlineSnapshot(`
+  debugCalls: logger.debug.mock.calls.map(filterPaths).sort(sortLogs),
+  logErrorCalls: logger.error.mock.calls.map(filterPaths).sort(sortLogs)
+}).toMatchInlineSnapshot(`
 {
   "debugCalls": [
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
-    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
-    ],
-    [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
-    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
-    ],
-    [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
-    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
-    ],
-    [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
-    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
-    ],
-    [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
-    at Object.<anonymous> (/project/src/index.test.ts:79:59)",
-    ],
-    [
-      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:240:22)
+      "Error: ENOENT: no such file or directory, access 'file:///home/whoiam/projects/whook/src/index.ts:246:22)
     at Object.<anonymous> (/project/src/index.test.ts:79:59)",
     ],
     [
@@ -499,9 +479,6 @@ describe('runProcess', () => {
     ],
     [
       "⏳ - Module "optionsWithCORS.js" has no definition!",
-    ],
-    [
-      "⏳ - Skipped  "handleMinutes" crons schedule "*/1 * * * *" since not enabled in environment "local".",
     ],
     [
       "⏳ - Skipped "__snapshots__" per ignore patterns.",
@@ -541,6 +518,12 @@ describe('runProcess', () => {
     ],
     [
       "⏳ - Skipped "create.test.js.map" per file patterns.",
+    ],
+    [
+      "⏳ - Skipped "cronRun.d.ts" per ignore patterns.",
+    ],
+    [
+      "⏳ - Skipped "cronRun.js.map" per file patterns.",
     ],
     [
       "⏳ - Skipped "cronSchedule.d.ts" per ignore patterns.",
@@ -747,9 +730,6 @@ describe('runProcess', () => {
       "✅ - Module path of "jwtToken" found at "file:///project/src/services/jwtToken.ts".",
     ],
     [
-      "✅ - Module path of "localCronRunner" found at "@whook/whook/dist/services/localCronRunner.js".",
-    ],
-    [
       "✅ - Module path of "optionsWithCORS" found at "@whook/cors/dist/routes/optionsWithCORS.js".",
     ],
     [
@@ -874,18 +854,6 @@ describe('runProcess', () => {
     ],
     [
       "🍀 - Trying to find "CRON_DEFINITION_FILTER" module path in "__project__".",
-    ],
-    [
-      "🍀 - Trying to find "CRON_RUNNER_OPTIONS" module path in "@whook/authorization".",
-    ],
-    [
-      "🍀 - Trying to find "CRON_RUNNER_OPTIONS" module path in "@whook/cors".",
-    ],
-    [
-      "🍀 - Trying to find "CRON_RUNNER_OPTIONS" module path in "@whook/whook".",
-    ],
-    [
-      "🍀 - Trying to find "CRON_RUNNER_OPTIONS" module path in "__project__".",
     ],
     [
       "🍀 - Trying to find "DECODERS" module path in "@whook/authorization".",
@@ -1107,12 +1075,6 @@ describe('runProcess', () => {
       "🍀 - Trying to find "jwtToken" module path in "__project__".",
     ],
     [
-      "🍀 - Trying to find "localCronRunner" module path in "@whook/whook".",
-    ],
-    [
-      "🍀 - Trying to find "localCronRunner" module path in "__project__".",
-    ],
-    [
       "🍀 - Trying to find "optionsWithCORS" module path in "@whook/cors".",
     ],
     [
@@ -1221,9 +1183,6 @@ describe('runProcess', () => {
       "💿 - Loading "jwtToken" initializer from "file:///project/src/services/jwtToken.ts".",
     ],
     [
-      "💿 - Loading "localCronRunner" initializer from "@whook/whook/dist/services/localCronRunner.js".",
-    ],
-    [
       "💿 - Loading "optionsWithCORS" initializer from "@whook/cors/dist/routes/optionsWithCORS.js".",
     ],
     [
@@ -1288,9 +1247,6 @@ describe('runProcess', () => {
     ],
     [
       "💿 - Service "jwtToken" found in "file:///project/src/services/jwtToken.ts".",
-    ],
-    [
-      "💿 - Service "localCronRunner" found in "@whook/whook/dist/services/localCronRunner.js".",
     ],
     [
       "💿 - Service "optionsWithCORS" found in "@whook/cors/dist/routes/optionsWithCORS.js".",
@@ -1389,9 +1345,6 @@ describe('runProcess', () => {
       "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/dist/services/CRON_DEFINITION_FILTER.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/dist/services/CRON_RUNNER_OPTIONS.js".",
-    ],
-    [
       "🚫 - File doesn't exist at "file:///home/whoiam/projects/whook/dist/services/DECODERS.js".",
     ],
     [
@@ -1461,9 +1414,6 @@ describe('runProcess', () => {
       "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/CRON_DEFINITION_FILTER.js".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/CRON_RUNNER_OPTIONS.js".",
-    ],
-    [
       "🚫 - File doesn't exist at "file:///project/node_modules/@whook/authorization/dist/services/DECODERS.js".",
     ],
     [
@@ -1525,9 +1475,6 @@ describe('runProcess', () => {
     ],
     [
       "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/CRON_DEFINITION_FILTER.js".",
-    ],
-    [
-      "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/CRON_RUNNER_OPTIONS.js".",
     ],
     [
       "🚫 - File doesn't exist at "file:///project/node_modules/@whook/cors/dist/services/DECODERS.js".",
@@ -1602,9 +1549,6 @@ describe('runProcess', () => {
       "🚫 - File doesn't exist at "file:///project/src/services/CRON_DEFINITION_FILTER.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///project/src/services/CRON_RUNNER_OPTIONS.ts".",
-    ],
-    [
       "🚫 - File doesn't exist at "file:///project/src/services/DECODERS.ts".",
     ],
     [
@@ -1650,9 +1594,6 @@ describe('runProcess', () => {
       "🚫 - File doesn't exist at "file:///project/src/services/fetcher.ts".",
     ],
     [
-      "🚫 - File doesn't exist at "file:///project/src/services/localCronRunner.ts".",
-    ],
-    [
       "🚫 - File doesn't exist at "file:///project/src/services/uniqueId.ts".",
     ],
     [
@@ -1675,9 +1616,6 @@ describe('runProcess', () => {
     ],
     [
       "🚫 - Module path of "CRON_DEFINITION_FILTER" not found.",
-    ],
-    [
-      "🚫 - Module path of "CRON_RUNNER_OPTIONS" not found.",
     ],
     [
       "🚫 - Module path of "DECODERS" not found.",
@@ -1740,9 +1678,6 @@ describe('runProcess', () => {
       "🛂 - Dynamic import of "@whook/whook/dist/routes/getPing.js".",
     ],
     [
-      "🛂 - Dynamic import of "@whook/whook/dist/services/localCronRunner.js".",
-    ],
-    [
       "🛂 - Dynamic import of "ecstatic".",
     ],
     [
@@ -1750,6 +1685,9 @@ describe('runProcess', () => {
     ],
     [
       "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/dist/commands/create.js".",
+    ],
+    [
+      "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/dist/commands/cronRun.js".",
     ],
     [
       "🛂 - Dynamic import of "file:///home/whoiam/projects/whook/dist/commands/cronSchedule.js".",
@@ -1890,9 +1828,6 @@ describe('runProcess', () => {
   "logErrorCalls": [
     [
       "On air 🚀🌕",
-    ],
-    [
-      "⌚ - Initializing the local cron runner (1 crons).",
     ],
     [
       "⌨️ - Initializing the basic query parser.",

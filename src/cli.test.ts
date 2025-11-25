@@ -12,9 +12,9 @@ describe('commands should work', () => {
     );
 
     expect({
-      stdout: replacePaths(stdout),
-      stderr: replacePaths(stderr),
-    }).toMatchInlineSnapshot(`
+  stdout: replacePaths(stdout),
+  stderr: replacePaths(stderr)
+}).toMatchInlineSnapshot(`
 {
   "stderr": "⚡ - Loading configurations from "file:///project/dist/config/local/config.js".
 🤖 - Initializing the \`$autoload\` service.
@@ -32,8 +32,9 @@ On air 🚀🌕
 - sendMail: A command to send mails
 
 
-# Provided by "@whook/whook": 8 commands
+# Provided by "@whook/whook": 9 commands
 - config: A simple program that returns the queried config value
+- cronRun: A command to run all instances of a cron
 - cronSchedule: A command to run a cron schedules for a given time frame
 - env: A command printing env values
 - generateOpenAPISchema: Write openAPI schema to stdout
