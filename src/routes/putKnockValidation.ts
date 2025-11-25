@@ -10,6 +10,7 @@ import type {
   TokenPayload,
 } from '../services/tokenStore.js';
 import { YHTTPError } from 'yhttperror';
+import { type SendMailService } from '../services/sendMail.js';
 
 export const definition = {
   path: '/knock/{knockId}/validation',
@@ -32,6 +33,12 @@ export const definition = {
         'application/json': {
           schema: {
             type: 'object',
+            required: ['from', 'to'],
+            properties: {
+              from: { type: 'string', format: 'email' },
+              to: { type: 'string', format: 'email' },
+            },
+            additionalProperties: false,
           },
         },
       },
@@ -54,9 +61,11 @@ export const definition = {
 async function initPutKnockValidation({
   log,
   tokenStore,
+  sendMail,
 }: {
   log: LogService;
   tokenStore: TokenStoreService;
+  sendMail: SendMailService;
 }) {
   const handler: WhookRouteTypedHandler<
     operations[typeof definition.operation.operationId],
@@ -77,6 +86,13 @@ async function initPutKnockValidation({
     await tokenStore.set(knockId, updatedPayload);
 
     log('warning', `📢 - Validated knock: ${knockId}!`);
+
+    await sendMail({
+      from: body.to,
+      to: body.from,
+      subject: 'Your knock has been validated!',
+      text: `You can send mail with : ${body.to.split('@')[0].split('+')[0]}+${knockId}@${body.to.split('@')[1]}`,
+    });
 
     return {
       status: 201,

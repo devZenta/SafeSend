@@ -122,7 +122,9 @@ ${text}
             validated: false,
           });
 
-          const knockLink = `${BASE_URL}${BASE_PATH}/knock/${newToken}/validation`;
+          const knockLink = `${BASE_URL}${BASE_PATH}/knock/${newToken}/validation?from=${encodeURIComponent(
+            fromAddress,
+          )}&to=${encodeURIComponent(toAddress)}`;
 
           await sendMail({
             from: fromAddress,
