@@ -7,7 +7,7 @@ import { type JsonObject } from 'type-fest';
 import { YError } from 'yerror';
 
 export type SendMailEnvVars = {
-  SMTP_CONNECTION_URL: string;
+  SMTP_CONNECTION_URL?: string;
 };
 export type SendMailDependencies = {
   ENV: SendMailEnvVars;
@@ -19,6 +19,10 @@ async function initSendMail({
   ENV,
   log = noop,
 }: SendMailDependencies): Promise<SendMailService> {
+  if (!ENV.SMTP_CONNECTION_URL) {
+    throw new YError('E_NO_SMTP_URL');
+  }
+
   const transporter = createTransport({
     host: new URL(ENV.SMTP_CONNECTION_URL).hostname,
     port: parseInt(new URL(ENV.SMTP_CONNECTION_URL).port, 10),

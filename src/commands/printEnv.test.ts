@@ -15,7 +15,9 @@ describe('printEnvCommand', () => {
     // See : https://stackoverflow.com/questions/56349619/ts2352-declare-object-with-dynamic-properties-and-one-property-with-specific-t
     const printEnvCommand = await initPrintEnvCommand({
       log,
-      ENV: { NODE_ENV: NodeEnv.Test },
+      ENV: {
+        NODE_ENV: NodeEnv.Test,
+      },
     });
     const result = await printEnvCommand({
       command: 'whook',
