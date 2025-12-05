@@ -1,10 +1,11 @@
 import { autoProvider, location, type Provider } from 'knifecycle';
 import { type LogService } from 'common-services';
 import { SMTPServer } from 'smtp-server';
-import EmlParser from 'eml-parser';
+import PostalMime from 'postal-mime';
 import { type SendMailService } from './sendMail.js';
 import { type TokenStoreService } from './tokenStore.js';
 import { type RandomBytesService } from './randomBytes.js';
+import { printStackTrace } from 'yerror';
 
 export type SmtpServerService = InstanceType<typeof SMTPServer>;
 export type SmtpServerOptions = {
@@ -47,25 +48,19 @@ async function initSmtpServer({
     async onData(stream, session, callback) {
       try {
         log('warning', `📧 - Parsing email data (session: ${session.id}).`);
-
-        const result = await new EmlParser(stream).parseEml();
+        const buffer = Buffer.concat(await stream.toArray());
+        const result = await PostalMime.parse(buffer);
 
         log(
           'warning',
           `📧 - Email parsed successfully (session: ${session.id}).`,
         );
 
-        const fromAddress =
-          result.from?.value?.[0]?.address ||
-          result.from?.text ||
-          'unknown@example.com';
-        const toAddress =
-          result.to?.value?.[0]?.address ||
-          result.to?.text ||
-          'unknown@example.com';
+        const fromAddress = result.from?.address || 'unknown@example.com';
+        const toAddress = result.to?.[0]?.address || 'unknown@example.com';
         const subject = result.subject || 'No subject';
         const text = result.text || 'No content';
-        const headers = result.headers || new Map<string, string>();
+        const headers = result.headers || [];
 
         log(
           'warning',
@@ -90,7 +85,8 @@ async function initSmtpServer({
 
         const token = toAddress.split('@')[0].includes('+')
           ? toAddress.split('@')[0].split('+').pop()
-          : headers.get('x-safesend-token');
+          : headers.find(({ key }) => key.toLowerCase() === 'x-safesend-token')
+              ?.value;
 
         if (!token) {
           log(
@@ -204,6 +200,7 @@ ${text}
           'error',
           `❌ - Error parsing email (session: ${session.id}): ${err}`,
         );
+        log('error-stack', printStackTrace(err as Error));
         callback(err as Error);
       }
     },
