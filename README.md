@@ -38,6 +38,9 @@ SMTP_CONNECTION_URL=smtp://localhost:2025 node --run dev -- sendMail --recipient
 
 # This should work with the appropriate token
 SMTP_CONNECTION_URL=smtp://localhost:2025 node --run dev -- sendMail --recipient text+$APPROPRIATE_TOKEN@enigma.com --sender test@xmp.com --subject test --message test
+
+SMTP_CONNECTION_URL=smtp://localhost:2025 node --run dev -- sendMail --recipient text@enigma.com --sender test@xmp.com --headers 
+'{"X-SafeSend-Token": "$APPROPRIATE_TOKEN"}' --subject test --message test
 ```
 
 You can debug the token store anytime by running:
