@@ -66,7 +66,6 @@ async function initSmtpServer({
         const subject = result.subject || 'No subject';
         const text = result.text || 'No content';
         const headers = result.headers || new Map<string, string>();
-        console.log(headers);
 
         log(
           'warning',
@@ -129,9 +128,7 @@ ${text}
             from: fromAddress,
           });
 
-          const knockLink = `${BASE_URL}${BASE_PATH}/knock/${newToken}/validation?from=${encodeURIComponent(
-            fromAddress,
-          )}&to=${encodeURIComponent(toAddress)}`;
+          const knockLink = `${BASE_URL}${BASE_PATH}/knock/${newToken}/validation`;
 
           await sendMail({
             from: fromAddress,

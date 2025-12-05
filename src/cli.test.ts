@@ -12,9 +12,9 @@ describe('commands should work', () => {
     );
 
     expect({
-      stdout: replacePaths(stdout),
-      stderr: replacePaths(stderr),
-    }).toMatchInlineSnapshot(`
+  stdout: replacePaths(stdout),
+  stderr: replacePaths(stderr)
+}).toMatchInlineSnapshot(`
 {
   "stderr": "⚡ - Loading configurations from "file:///project/dist/config/local/config.js".
 🤖 - Initializing the \`$autoload\` service.
@@ -59,9 +59,9 @@ On air 🚀🌕
     );
 
     expect({
-      stdout: replacePaths(stdout),
-      stderr: replacePaths(stderr),
-    }).toMatchInlineSnapshot(`
+  stdout: replacePaths(stdout),
+  stderr: replacePaths(stderr)
+}).toMatchInlineSnapshot(`
 {
   "stderr": "⚡ - Loading configurations from "file:///project/dist/config/local/config.js".
 🤖 - Initializing the \`$autoload\` service.
@@ -84,9 +84,9 @@ On air 🚀🌕
     );
 
     expect({
-      stdout: replacePaths(stdout),
-      stderr: replacePaths(stderr),
-    }).toMatchInlineSnapshot(`
+  stdout: replacePaths(stdout),
+  stderr: replacePaths(stderr)
+}).toMatchInlineSnapshot(`
 {
   "stderr": "⚡ - Loading configurations from "file:///project/dist/config/local/config.js".
 🤖 - Initializing the \`$autoload\` service.
