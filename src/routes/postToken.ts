@@ -70,7 +70,7 @@ async function initPostToken({
 
     await tokenStore.set(newToken, {
       pattern: body.pattern,
-      validated: false,
+      status: 'validated',
     });
     return {
       status: 200,

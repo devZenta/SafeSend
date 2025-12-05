@@ -22,7 +22,8 @@ describe('putKnockValidation', () => {
   test('should validate an existing knock', async () => {
     tokenStore.get.mockResolvedValue({
       pattern: 'test@example.com',
-      validated: false,
+      status: 'requested',
+      from: 'postmaster@safesend.com',
     });
 
     const putKnockValidation = await initPutKnockValidation({
@@ -33,10 +34,7 @@ describe('putKnockValidation', () => {
 
     const response = await putKnockValidation({
       path: { knockId: 'rtt' },
-      body: {
-        from: 'test@example.com',
-        to: 'someone@somewhere.com',
-      },
+      body: {},
     });
 
     expect(response).toEqual({
@@ -47,7 +45,7 @@ describe('putKnockValidation', () => {
 
     expect(tokenStore.set).toHaveBeenCalledWith('rtt', {
       pattern: 'test@example.com',
-      validated: true,
+      status: 'validated',
     });
 
     expect(log.mock.calls).toEqual([['warning', '📢 - Validated knock: rtt!']]);
@@ -65,10 +63,7 @@ describe('putKnockValidation', () => {
     await expect(
       putKnockValidation({
         path: { knockId: 'unknown' },
-        body: {
-          from: 'test@example.com',
-          to: 'someone@somewhere.com',
-        },
+        body: {},
       }),
     ).rejects.toThrow('E_UNKNOWN_KNOCK');
 

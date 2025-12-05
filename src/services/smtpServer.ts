@@ -125,7 +125,8 @@ ${text}
 
           await tokenStore.set(newToken, {
             pattern: fromAddress,
-            validated: false,
+            status: 'requested',
+            from: fromAddress,
           });
 
           const knockLink = `${BASE_URL}${BASE_PATH}/knock/${newToken}/validation?from=${encodeURIComponent(
@@ -162,7 +163,7 @@ ${text}
           );
         }
 
-        if (!tokenPayload.validated) {
+        if (tokenPayload.status !== 'validated') {
           log(
             'warning',
             `💌 - Rejected mail from ${fromAddress} due to unvalidated token (session: ${session.id}).`,

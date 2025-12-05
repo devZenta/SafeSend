@@ -15,21 +15,7 @@ export const definition = {
     operationId: 'getKnockValidation',
     summary: 'Allow to validate a knock with a link',
     tags: ['system'],
-    parameters: [
-      ...baseDefinition.operation.parameters,
-      {
-        name: 'from',
-        in: 'query',
-        required: true,
-        schema: { type: 'string', format: 'email' },
-      },
-      {
-        name: 'to',
-        in: 'query',
-        required: true,
-        schema: { type: 'string', format: 'email' },
-      },
-    ],
+    parameters: [...baseDefinition.operation.parameters],
     responses: {
       201: {
         description: 'Success',
@@ -55,8 +41,8 @@ async function initGetKnockValidation({
   const handler: WhookRouteTypedHandler<
     operations[typeof definition.operation.operationId],
     typeof definition
-  > = async ({ path: { knockId }, query: { from, to } }) => {
-    return putKnockValidation({ path: { knockId }, body: { from, to } });
+  > = async ({ path: { knockId } }) => {
+    return putKnockValidation({ path: { knockId }, body: {} });
   };
 
   return handler;

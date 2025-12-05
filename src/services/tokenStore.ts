@@ -6,8 +6,15 @@ import { join } from 'node:path';
 
 export type TokenPayload = {
   pattern: string;
-  validated: boolean;
-};
+} & (
+  | {
+      status: 'validated';
+    }
+  | {
+      status: 'requested';
+      from: string;
+    }
+);
 export type TokenStoreService = {
   set(token: string, payload: TokenPayload): Promise<void>;
   get(token: string): Promise<TokenPayload | undefined>;

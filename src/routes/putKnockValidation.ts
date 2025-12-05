@@ -33,11 +33,6 @@ export const definition = {
         'application/json': {
           schema: {
             type: 'object',
-            required: ['from', 'to'],
-            properties: {
-              from: { type: 'string', format: 'email' },
-              to: { type: 'string', format: 'email' },
-            },
             additionalProperties: false,
           },
         },
@@ -78,9 +73,14 @@ async function initPutKnockValidation({
       throw new YHTTPError(404, 'E_UNKNOWN_KNOCK', knockId);
     }
 
+    if (payload.status !== 'requested') {
+      log('warning', `❗ - Cannot validate knock: ${knockId}!`);
+      throw new YHTTPError(404, 'E_UNKNOWN_KNOCK', knockId);
+    }
+
     const updatedPayload: TokenPayload = {
-      ...payload,
-      validated: true,
+      pattern: payload.pattern,
+      status: 'validated',
     };
 
     await tokenStore.set(knockId, updatedPayload);
@@ -88,10 +88,10 @@ async function initPutKnockValidation({
     log('warning', `📢 - Validated knock: ${knockId}!`);
 
     await sendMail({
-      from: body.to,
-      to: body.from,
+      from: 'postmaster@safesend.com',
+      to: payload.from,
       subject: 'Your knock has been validated!',
-      text: `You can send mail with : ${body.to.split('@')[0].split('+')[0]}+${knockId}@${body.to.split('@')[1]}`,
+      text: `You can send mail with : ${payload.from.split('@')[0].split('+')[0]}+${knockId}@${payload.from.split('@')[1]}`,
     });
 
     return {

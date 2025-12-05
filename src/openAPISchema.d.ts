@@ -78,17 +78,10 @@ declare interface operations {
       path: {
         knockId: string;
       };
-      query: {
-        from: string;
-        to: string;
-      };
     };
   };
   putKnockValidation: {
-    requestBody: {
-      from: string;
-      to: string;
-    };
+    requestBody: object;
     responses: {
       201: {
         body: object;

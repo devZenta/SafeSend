@@ -509,24 +509,6 @@ exports[`API should work 1`] = `
                 "type": "string",
               },
             },
-            {
-              "in": "query",
-              "name": "from",
-              "required": true,
-              "schema": {
-                "format": "email",
-                "type": "string",
-              },
-            },
-            {
-              "in": "query",
-              "name": "to",
-              "required": true,
-              "schema": {
-                "format": "email",
-                "type": "string",
-              },
-            },
           ],
           "responses": {
             "201": {
@@ -553,24 +535,6 @@ exports[`API should work 1`] = `
               "name": "knockId",
               "required": true,
               "schema": {
-                "type": "string",
-              },
-            },
-            {
-              "in": "query",
-              "name": "from",
-              "required": false,
-              "schema": {
-                "format": "email",
-                "type": "string",
-              },
-            },
-            {
-              "in": "query",
-              "name": "to",
-              "required": false,
-              "schema": {
-                "format": "email",
                 "type": "string",
               },
             },
@@ -602,20 +566,6 @@ exports[`API should work 1`] = `
               "application/json": {
                 "schema": {
                   "additionalProperties": false,
-                  "properties": {
-                    "from": {
-                      "format": "email",
-                      "type": "string",
-                    },
-                    "to": {
-                      "format": "email",
-                      "type": "string",
-                    },
-                  },
-                  "required": [
-                    "from",
-                    "to",
-                  ],
                   "type": "object",
                 },
               },
