@@ -20,6 +20,7 @@ import { type BaseAppEnvVars, type TimeMockConfig } from 'application-services';
 import { type RouteDefinitionFilterEnvVars } from './services/ROUTE_DEFINITION_FILTER.ts';
 import { type AppEnv } from './index.ts';
 import { type SmtpServerConfig } from './services/smtpServer.ts';
+import { type SendMailEnvVars } from './services/sendMail.ts';
 
 /* Architecture Note #2.1: Typings
 
@@ -35,6 +36,7 @@ declare module 'application-services' {
     extends BaseAppEnvVars,
       WhookBaseEnv,
       JWTEnvVars,
+      SendMailEnvVars,
       RouteDefinitionFilterEnvVars,
       WhookSwaggerUIEnv {}
 
