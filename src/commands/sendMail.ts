@@ -34,6 +34,13 @@ export const definition = {
       },
     },
     {
+      name: 'headers',
+      description: 'The mail headers',
+      schema: {
+        type: 'string',
+      },
+    },
+    {
       name: 'message',
       description: 'The mail message',
       schema: {
@@ -60,18 +67,20 @@ async function initsendMailCommand({
     sender: string;
     recipient: string;
     subject: string;
+    headers: string;
     message: string;
   }>
 > {
   return async (args) => {
     const {
-      namedArguments: { sender, recipient, subject, message },
+      namedArguments: { sender, recipient, subject, headers, message },
     } = args;
 
     await sendMail({
       from: sender,
       to: recipient,
       subject,
+      headers: headers ? JSON.parse(headers) : {},
       text: message,
     });
 

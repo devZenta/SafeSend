@@ -25,6 +25,9 @@ declare interface paths {
   '/crons/{cronName}/run': {
     post: operations['postCronRun'];
   };
+  '/tokens': {
+    post: operations['postToken'];
+  };
   '/echo': {
     put: operations['putEcho'];
   };
@@ -161,6 +164,16 @@ declare interface operations {
       };
       query: {
         date: components['parameters']['date'];
+      };
+    };
+  };
+  postToken: {
+    requestBody: {
+      pattern: string;
+    };
+    responses: {
+      200: {
+        body: object;
       };
     };
   };

@@ -737,6 +737,9 @@ describe('runProcess', () => {
       "✅ - Module path of "postCronRun" found at "file:///project/src/routes/postCronRun.ts".",
     ],
     [
+      "✅ - Module path of "postToken" found at "file:///project/src/routes/postToken.ts".",
+    ],
+    [
       "✅ - Module path of "putEcho" found at "file:///project/src/routes/putEcho.ts".",
     ],
     [
@@ -747,6 +750,9 @@ describe('runProcess', () => {
     ],
     [
       "✅ - Module path of "putTime" found at "file:///project/src/routes/putTime.ts".",
+    ],
+    [
+      "✅ - Module path of "randomBytes" found at "file:///project/src/services/randomBytes.ts".",
     ],
     [
       "✅ - Module path of "sendMail" found at "file:///project/src/services/sendMail.ts".",
@@ -1094,6 +1100,9 @@ describe('runProcess', () => {
       "🍀 - Trying to find "postCronRun" module path in "__project__".",
     ],
     [
+      "🍀 - Trying to find "postToken" module path in "__project__".",
+    ],
+    [
       "🍀 - Trying to find "putEcho" module path in "__project__".",
     ],
     [
@@ -1104,6 +1113,9 @@ describe('runProcess', () => {
     ],
     [
       "🍀 - Trying to find "putTime" module path in "__project__".",
+    ],
+    [
+      "🍀 - Trying to find "randomBytes" module path in "__project__".",
     ],
     [
       "🍀 - Trying to find "sendMail" module path in "__project__".",
@@ -1202,6 +1214,9 @@ describe('runProcess', () => {
       "💿 - Loading "postCronRun" initializer from "file:///project/src/routes/postCronRun.ts".",
     ],
     [
+      "💿 - Loading "postToken" initializer from "file:///project/src/routes/postToken.ts".",
+    ],
+    [
       "💿 - Loading "putEcho" initializer from "file:///project/src/routes/putEcho.ts".",
     ],
     [
@@ -1212,6 +1227,9 @@ describe('runProcess', () => {
     ],
     [
       "💿 - Loading "putTime" initializer from "file:///project/src/routes/putTime.ts".",
+    ],
+    [
+      "💿 - Loading "randomBytes" initializer from "file:///project/src/services/randomBytes.ts".",
     ],
     [
       "💿 - Loading "sendMail" initializer from "file:///project/src/services/sendMail.ts".",
@@ -1274,6 +1292,9 @@ describe('runProcess', () => {
       "💿 - Service "postCronRun" found in "file:///project/src/routes/postCronRun.ts".",
     ],
     [
+      "💿 - Service "postToken" found in "file:///project/src/routes/postToken.ts".",
+    ],
+    [
       "💿 - Service "putEcho" found in "file:///project/src/routes/putEcho.ts".",
     ],
     [
@@ -1284,6 +1305,9 @@ describe('runProcess', () => {
     ],
     [
       "💿 - Service "putTime" found in "file:///project/src/routes/putTime.ts".",
+    ],
+    [
+      "💿 - Service "randomBytes" found in "file:///project/src/services/randomBytes.ts".",
     ],
     [
       "💿 - Service "sendMail" found in "file:///project/src/services/sendMail.ts".",
@@ -1799,6 +1823,12 @@ describe('runProcess', () => {
       "🛂 - Dynamic import of "file:///project/src/routes/postCronRun.ts".",
     ],
     [
+      "🛂 - Dynamic import of "file:///project/src/routes/postToken.ts".",
+    ],
+    [
+      "🛂 - Dynamic import of "file:///project/src/routes/postToken.ts".",
+    ],
+    [
       "🛂 - Dynamic import of "file:///project/src/routes/putEcho.ts".",
     ],
     [
@@ -1839,6 +1869,9 @@ describe('runProcess', () => {
     ],
     [
       "🛂 - Dynamic import of "file:///project/src/services/jwtToken.ts".",
+    ],
+    [
+      "🛂 - Dynamic import of "file:///project/src/services/randomBytes.ts".",
     ],
     [
       "🛂 - Dynamic import of "file:///project/src/services/sendMail.ts".",
@@ -1888,7 +1921,7 @@ describe('runProcess', () => {
       "🏭 - Initializing the CRONS_WRAPPERS service.",
     ],
     [
-      "🏭 - Initializing the ROUTES_HANDLERS service with 13 handlers wrapped by 2 wrappers.",
+      "🏭 - Initializing the ROUTES_HANDLERS service with 14 handlers wrapped by 2 wrappers.",
     ],
     [
       "🏭 - Initializing the ROUTES_WRAPPERS service.",

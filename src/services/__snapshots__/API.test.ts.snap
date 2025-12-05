@@ -7,6 +7,7 @@ exports[`API should always have the same amount of bearer authenticated endpoint
   "get /diagnostic",
   "get /openAPI",
   "post /crons/{cronName}/run",
+  "post /tokens",
 ]
 `;
 
@@ -28,8 +29,10 @@ exports[`API should always have the same amount of endpoints 1`] = `
   "options /ping",
   "options /stream",
   "options /time",
+  "options /tokens",
   "options /{pathParam1}/{pathParam2}",
   "post /crons/{cronName}/run",
+  "post /tokens",
   "put /echo",
   "put /knock/{knockId}/validation",
   "put /stream",
@@ -52,6 +55,7 @@ exports[`API should always have the same amount of non authenticated endpoints 1
   "options /ping",
   "options /stream",
   "options /time",
+  "options /tokens",
   "options /{pathParam1}/{pathParam2}",
   "put /echo",
   "put /knock/{knockId}/validation",
@@ -83,8 +87,10 @@ exports[`API should always have the same amount of publicly documented endpoints
   "options /ping",
   "options /stream",
   "options /time",
+  "options /tokens",
   "options /{pathParam1}/{pathParam2}",
   "post /crons/{cronName}/run",
+  "post /tokens",
   "put /echo",
   "put /knock/{knockId}/validation",
   "put /stream",
@@ -788,6 +794,74 @@ exports[`API should work 1`] = `
           "summary": "Enable OPTIONS for CORS",
           "tags": [
             "CORS",
+          ],
+        },
+      },
+      "/tokens": {
+        "options": {
+          "operationId": "postTokenCORS",
+          "parameters": [
+            {
+              "in": "query",
+              "name": "access_token",
+              "schema": {
+                "type": "string",
+              },
+            },
+          ],
+          "responses": {
+            "200": {
+              "description": "CORS sent.",
+            },
+          },
+          "summary": "Enable OPTIONS for CORS",
+          "tags": [
+            "CORS",
+          ],
+        },
+        "post": {
+          "operationId": "postToken",
+          "parameters": [],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "pattern": {
+                      "type": "string",
+                    },
+                  },
+                  "required": [
+                    "pattern",
+                  ],
+                  "type": "object",
+                },
+              },
+            },
+            "required": true,
+          },
+          "responses": {
+            "200": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                  },
+                },
+              },
+              "description": "Success",
+            },
+          },
+          "security": [
+            {
+              "bearerAuth": [
+                "admin",
+              ],
+            },
+          ],
+          "summary": "Create a token for a given pattern",
+          "tags": [
+            "system",
           ],
         },
       },

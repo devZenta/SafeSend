@@ -65,6 +65,8 @@ async function initSmtpServer({
           'unknown@example.com';
         const subject = result.subject || 'No subject';
         const text = result.text || 'No content';
+        const headers = result.headers || new Map<string, string>();
+        console.log(headers);
 
         log(
           'warning',
@@ -89,7 +91,7 @@ async function initSmtpServer({
 
         const token = toAddress.split('@')[0].includes('+')
           ? toAddress.split('@')[0].split('+').pop()
-          : undefined;
+          : headers.get('x-safesend-token');
 
         if (!token) {
           log(
