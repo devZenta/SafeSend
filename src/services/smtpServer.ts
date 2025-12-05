@@ -96,14 +96,18 @@ async function initSmtpServer({
             'warning',
             `💌 - Rejected mail from ${fromAddress} since no token (session: ${session.id}).`,
           );
+
+          const knockEmail = `${toAddress.split('@')[0]}+knock@${toAddress.split('@')[1]}`;
+
           await sendMail({
             from: toAddress,
             to: fromAddress,
             subject: 'Protected mailbox',
+            headers: { 'X-SafeSend-Challenge': knockEmail },
             text: `Hi!
 
 This mailbox is protected by SafeSend, to send emails to it,
- you first need to send a knock email to: ${toAddress.split('@')[0]}+knock@${toAddress.split('@')[1]}
+ you first need to send a knock email to: ${knockEmail}
 
 Below is a copy of your original email:
 Subject: ${subject},
@@ -130,6 +134,7 @@ ${text}
             from: fromAddress,
             to: toAddress,
             subject: "Someone's knocking",
+            headers: { 'X-SafeSend-KnockUrl': knockLink },
             text: `Hi! Someone is knocking, to allow it to send email, click on the link: ${knockLink}`,
           });
 
